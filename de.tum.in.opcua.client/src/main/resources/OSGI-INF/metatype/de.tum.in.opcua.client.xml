@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.opcua.client" name="OPC-UA"
+		description="This bundle is responsible for communicating with the OPC-UA Server.">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/elegantthemes/beautiful-flat/128/ship-wheel-icon.png"
+			size="32" />
+		
+		<AD id="opcua.application.name" name="opcua.application.name" type="String"
+			cardinality="0" required="true" default="opc-ua client"
+			description="Configurable property to set opc-ua application name" />
+			
+		<AD id="opcua.application.uri" name="opcua.application.uri" type="String"
+			cardinality="0" required="true" default="urn:kura:opcua:client"
+			description="Configurable property to set opc-ua application uri" />
+			
+		<AD id="opcua.certificate.location" name="opcua.certificate.location" type="String"
+			cardinality="0" required="true" default="PFX or JKS Keystore"
+			description="Configurable property to set opc-ua application certificate (Absolute Location)" />
+			
+		<AD id="opcua.request.timeout" name="opcua.request.timeout" type="Integer"
+			cardinality="0" required="true" default="5"
+			description="Configurable property to set opc-ua request timeout (in seconds)" />
+			
+		<AD id="opcua.security.policy" name="opcua.security.policy"
+			type="Integer" cardinality="0" required="true" default="0"
+			description="Configurable property specifying the Security Policy">
+			<Option label="None" value="0" />
+			<Option label="Basic128Rsa15" value="1" />
+			<Option label="Basic256" value="2" />
+			<Option label="Basic256Sha256" value="3" />
+		</AD>
+		
+		<AD id="opcua.username" name="opcua.username"
+			type="String" cardinality="0" required="false" default=""
+			description="Configurable Property to set opc-ua server username" />
+		
+		<AD id="opcua.password" name="opcua.password"
+			type="String" cardinality="0" required="false" default=""
+			description="Configurable Property to set opc-ua server password" />
+
+		<AD id="keystore.client.alias" name="keystore.client.alias" type="String"
+			cardinality="0" required="true" default="client-ai"
+			description="Configurable property to set client alias for the keystore" />
+
+		<AD id="keystore.server.alias" name="keystore.server.alias"
+			type="String" cardinality="0" required="true" default="server-ai"
+			description="Configurable Property to set server alias for the keystore" />
+		
+		<AD id="keystore.type" name="keystore.type"
+			type="String" cardinality="0" required="true" default="PKCS12"
+			description="Configurable property specifying keystore type">
+			<Option label="PKCS11" value="PKCS11" />
+			<Option label="PKCS12" value="PKCS12" />
+			<Option label="JKS" value="JKS" />
+		</AD>
+
+		<AD id="keystore.password" name="keystore.password"
+			type="String" cardinality="0" required="true" default="password"
+			description="Configurable Property to set keystore password" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.opcua.client">
+		<Object ocdref="de.tum.in.opcua.client" />
+	</Designate>
+</MetaData>

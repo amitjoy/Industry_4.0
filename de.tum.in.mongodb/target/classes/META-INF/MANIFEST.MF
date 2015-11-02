@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445016209578
+Build-Jdk: 1.8.0_60
+Built-By: AMIT
+Bundle-ClassPath: .,mongo-java-driver-3.0.1.jar
+Bundle-Description: Responsible to provide MongoDB connection
+Bundle-Developer: Amit Kumar Mondal
+Bundle-DocURL: http://www.tum.de
+Bundle-ManifestVersion: 2
+Bundle-Name: MongoDB Service
+Bundle-SymbolicName: de.tum.in.mongodb
+Bundle-Vendor: TU Munich
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: mongo-java-driver
+Embedded-Artifacts: mongo-java-driver-3.0.1.jar;g="org.mongodb";a="mongo
+ -java-driver";v="3.0.1"
+Export-Package: de.tum.in.mongodb;uses:="org.eclipse.kura.cloud,org.ecli
+ pse.kura.configuration,org.osgi.service.component";version="1.0.0.SNAPS
+ HOT"
+Import-Package: io.netty.bootstrap,io.netty.buffer,io.netty.channel,io.n
+ etty.channel.nio,io.netty.channel.socket,io.netty.channel.socket.nio,io
+ .netty.handler.ssl,io.netty.handler.timeout,io.netty.util.concurrent,ja
+ vax.crypto,javax.crypto.spec,javax.management,javax.net,javax.net.ssl,j
+ avax.security.auth.callback,javax.security.sasl,javax.xml.bind,org.ecli
+ pse.kura.cloud;version="[1.0,2)",org.eclipse.kura.configuration;version
+ ="[1.0,2)",org.ietf.jgss,org.osgi.framework;version="[1.7,2)",org.osgi.
+ service.component;version="[1.2,2)",org.slf4j;version="[1.6,2)"
+Service-Component: OSGI-INF/de.tum.in.mongodb.MongoDBServiceConfiguratio
+ n.xml
+Tool: Bnd-2.1.0.20130426-122213

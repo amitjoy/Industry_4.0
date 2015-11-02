@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+DeploymentPackage-SymbolicName: de.tum.in.dp.cache
+DeploymentPackage-Version: 1.0.0
+DeploymentPackage-Copyright: Amit Kumar Mondal
+DeploymentPackage-ContactAddress: admin@amitinside.com
+DeploymentPackage-Name: Realtime Data Caching Mechanism
+
+Name: de.tum.in.data.cache-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.data.cache
+Bundle-Version: 1.0.0.SNAPSHOT

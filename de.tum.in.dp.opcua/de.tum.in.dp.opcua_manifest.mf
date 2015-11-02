@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+DeploymentPackage-SymbolicName: de.tum.in.dp.opcua
+DeploymentPackage-Version: 1.0.0
+DeploymentPackage-Copyright: Amit Kumar Mondal
+DeploymentPackage-ContactAddress: admin@amitinside.com
+DeploymentPackage-Name: OPC-UA
+
+Name: de.tum.in.opcua.client-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua.client
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.opcua-sdk-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua-sdk
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.opcua.client.read-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua.client.read
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.opcua.client.write-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua.client.write
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.opcua.client.read.node-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua.client.read.node
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.opcua.client.write.node-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.opcua.client.write.node
+Bundle-Version: 1.0.0.SNAPSHOT

@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+DeploymentPackage-SymbolicName: de.tum.in.dp.commons
+DeploymentPackage-Version: 1.0.0
+DeploymentPackage-Copyright: Amit Kumar Mondal
+DeploymentPackage-ContactAddress: admin@amitinside.com
+DeploymentPackage-Description: Common Bundles required for the application
+
+Name: de.tum.in.events-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.events
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.mongodb-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.mongodb
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.activity.log-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.activity.log
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.hsql.conf-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.hsql.conf
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.heartbeat-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.heartbeat
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.splunk-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.splunk
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.ifttt-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.ifttt
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.osgi.utility-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.osgi.utility
+Bundle-Version: 1.0.0.SNAPSHOT

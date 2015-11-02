@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445016239670
+Build-Jdk: 1.8.0_60
+Built-By: AMIT
+Bundle-Description: This bundle is responsible for writing to a node of 
+ OPC-UA Server (Example Write Node)
+Bundle-Developer: Amit Kumar Mondal
+Bundle-DocURL: http://www.tum.de
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC-UA Client Write Node Example
+Bundle-SymbolicName: de.tum.in.opcua.client.write.node
+Bundle-Vendor: TU Munich
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: de.tum.in.client.write.node;uses:="com.digitalpetri.opcu
+ a.sdk.client,de.tum.in.opcua.client,org.osgi.service.component";version
+ ="1.0.0.SNAPSHOT"
+Import-Package: com.digitalpetri.opcua.sdk.client,com.digitalpetri.opcua
+ .sdk.client.api.nodes,com.digitalpetri.opcua.sdk.client.api.nodes.attac
+ hed,com.digitalpetri.opcua.stack.core.types.builtin,de.tum.in.opcua.cli
+ ent;version="[1.0,2)",org.osgi.service.component;version="[1.2,2)",org.
+ slf4j;version="[1.6,2)"
+Service-Component: OSGI-INF/de.tum.in.client.write.node.OpcUaClientWrite
+ Node.xml
+Tool: Bnd-2.1.0.20130426-122213

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<groupId>de.tum.in</groupId>
+	<artifactId>de.tum.in.parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Complete IDP Parent POM</name>
+	<packaging>pom</packaging>
+	
+	<developers>
+        <developer>
+            <id>I-AM-IT</id>
+            <name>Amit Kumar Mondal</name>
+            <email>admin@amitinside.com</email>
+        </developer>
+    </developers>
+
+	<properties>
+		<!-- Dependencies version -->
+		<bluecove.version>2.1.0</bluecove.version>
+		<osgi-core.version>5.0.0</osgi-core.version>
+		<osgi.version>4.3.1</osgi.version>
+		<slf4j.version>1.6.4</slf4j.version>
+		<opc-stack-client.version>1.0.2</opc-stack-client.version>
+		<opc-stack-core.version>1.0.2</opc-stack-core.version>
+		<ua-client.version>1.0.3-SNAPSHOT</ua-client.version>
+		<ua-server.version>0.4.3-SNAPSHOT</ua-server.version>
+		<ctt-namespace.version>0.4.3-SNAPSHOT</ctt-namespace.version>
+		<kura.version>1.0.5-SNAPSHOT</kura.version>
+		<guava.version>18.0</guava.version>
+		<mongo.version>3.0.1</mongo.version>
+		<felix.scr.version>1.9.6</felix.scr.version>
+		<felix.dm.version>3.2.0</felix.dm.version>
+		<apache.commons.collection.version>3.2.1</apache.commons.collection.version>
+		<apache.commons.io.version>1.3.2</apache.commons.io.version>
+		<apache.commons.email.version>1.2</apache.commons.email.version>
+		<findbugs.version>3.0.1</findbugs.version>
+		<quartz.version>2.2.0</quartz.version>
+
+		<!-- Plugins versions -->
+		<bundle.plugin.version>2.4.0</bundle.plugin.version>
+		<compiler.plugin.version>3.1</compiler.plugin.version>
+		<maven-scm-plugin.version>1.8.1</maven-scm-plugin.version>
+		<maven-invoker-plugin.version>1.8</maven-invoker-plugin.version>
+		<maven-javadoc-plugin.version>2.9</maven-javadoc-plugin.version>
+		<maven-release-plugin.version>2.5.1</maven-release-plugin.version>
+		<maven-scr-plugin.version>1.21.0</maven-scr-plugin.version>
+
+		<!-- Test dependencies version -->
+		<junit.version>4.11</junit.version>
+		<easymock.version>3.2</easymock.version>
+		<hamcrest.version>1.3</hamcrest.version>
+
+		<!-- Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Bluecove -->
+			<dependency>
+				<groupId>net.sf.bluecove</groupId>
+				<artifactId>bluecove</artifactId>
+				<version>${bluecove.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.bluecove</groupId>
+				<artifactId>bluecove-gpl</artifactId>
+				<version>${bluecove.version}</version>
+			</dependency>
+			<!-- OSGi -->
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>${osgi-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.compendium</artifactId>
+				<version>${osgi.version}</version>
+			</dependency>
+
+			<!--SLF4J -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- Eclipse Kura -->
+			<dependency>
+				<groupId>org.eclipse.kura</groupId>
+				<artifactId>org.eclipse.kura.api</artifactId>
+				<version>${kura.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.eclipse.kura</groupId>
+				<artifactId>org.eclipse.kura.core</artifactId>
+				<version>${kura.version}</version>
+			</dependency>
+
+			<!-- Guava -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+
+			<!-- Apache Felix -->
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.scr.annotations</artifactId>
+				<version>${felix.scr.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.dependencymanager</artifactId>
+				<version>${felix.dm.version}</version>
+			</dependency>
+
+			<!-- Apache Commons -->
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${apache.commons.collection.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${apache.commons.io.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-email</artifactId>
+				<version>${apache.commons.email.version}</version>
+			</dependency>
+
+			<!-- MongoDB Driver -->
+			<dependency>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongo-java-driver</artifactId>
+				<version>${mongo.version}</version>
+			</dependency>
+
+			<!-- Find Bugs Static Analysis -->
+			<dependency>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+			</dependency>
+
+			<!-- OPC-UA -->
+			<dependency>
+				<groupId>com.digitalpetri.opcua</groupId>
+				<artifactId>ua-client</artifactId>
+				<version>${ua-client.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.digitalpetri.opcua</groupId>
+				<artifactId>ua-server</artifactId>
+				<version>${ua-server.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.digitalpetri.opcua</groupId>
+				<artifactId>ctt-namespace</artifactId>
+				<version>${ctt-namespace.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.digitalpetri.opcua</groupId>
+				<artifactId>stack-client</artifactId>
+				<version>${opc-stack-client.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.digitalpetri.opcua</groupId>
+				<artifactId>stack-core</artifactId>
+				<version>${opc-stack-core.version}</version>
+			</dependency>
+			
+			<!-- Quartz -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- ===== -->
+	<!-- BUILD -->
+	<!-- ===== -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>${bundle.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>${maven-scm-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-invoker-plugin</artifactId>
+					<version>${maven-invoker-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-scr-plugin</artifactId>
+					<version>${maven-scr-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>findbugs-maven-plugin</artifactId>
+					<version>${findbugs.version}</version>
+					<configuration>
+						<findbugsXmlOutput>true</findbugsXmlOutput>
+						<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+						<xmlOutput>true</xmlOutput>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<modules>
+		<module>../de.tum.in.bluecove</module>
+		<module>../de.tum.in.bluecove.fragment</module>
+		<module>../de.tum.in.bluetooth</module>
+		<module>../de.tum.in.activity.log</module>
+		<module>../de.tum.in.bluetooth.milling.machine</module>
+		<module>../de.tum.in.data.cache</module>
+		<module>../de.tum.in.events</module>
+		<module>../de.tum.in.mongodb</module>
+		<module>../de.tum.in.hsql.conf</module>
+		<module>../de.tum.in.heartbeat</module>
+		<module>../de.tum.in.splunk</module>
+		<module>../de.tum.in.ifttt</module>
+		<module>../de.tum.in.opcua-sdk</module>
+		<module>../de.tum.in.opcua.client</module>
+		<module>../de.tum.in.opcua.client.read</module>
+		<module>../de.tum.in.opcua.client.write</module>
+		<module>../de.tum.in.opcua.client.read.node</module>
+		<module>../de.tum.in.opcua.client.write.node</module>
+		<module>../de.tum.in.socket.client</module>
+		<module>../de.tum.in.osgi.utility</module>
+		<module>../de.tum.in.bluetooth.milling-machine</module>
+		<module>../de.tum.in.dp.parent</module>
+	</modules>
+
+	<organization>
+		<url>http://www.tum.de</url>
+		<name>Technical University of Munich</name>
+	</organization>
+
+</project>
+

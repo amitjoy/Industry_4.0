@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.bluetooth" name="Bluetooth RFCOMM"
+		description="Settings for the Bluetooth RFCOMM application.">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/xenatt/the-circle/512/App-Bluetooth-icon.png"
+			size="32" />
+
+		<AD id="bluetooh.discovery.devices" name="bluetooh.discovery.devices"
+			type="String" cardinality="0" required="true"
+			default="0003C92DB48F=DEVICE_1#0015C94DA14A=DEVICE_2"
+			description="Configurable property to set list of bluetooth enabled devices to be discovered ((Separated by #))" />
+
+		<AD id="bluetooh.devices" name="bluetooh.devices" type="String"
+			cardinality="0" required="true"
+			default="id=DEVICE_1;pin=11111111;username=dummy_username;password=dummy_password;retry=true;max-retry=5#id=DEVICE_2;pin=11111111;username=dummy_username;password=dummy_password;retry=true;max-retry=5"
+			description="Configurable property to set all the connection-specific configurations for the remote bluetooth devices (Separated by #)" />
+
+		<AD id="bluetooh.devices.filter" name="bluetooh.devices.filter"
+			type="String" cardinality="0" required="true" default="device-filter"
+			description="Configurable property to set search filter for list of bluetooth enabled devices to be discovered" />
+
+		<AD id="bluetooth.discovery.mode" name="bluetooth.discovery.mode"
+			type="Integer" cardinality="0" required="true" default="0"
+			description="Configurable property specifying the discovery mode among GIAC and LIAC">
+			<Option label="GIAC" value="0" />
+			<Option label="LIAC" value="1" />
+		</AD>
+
+		<AD id="bluetooth.ignore.unnamed.devices" name="bluetooth.ignore.unnamed.devices"
+			type="Boolean" cardinality="0" required="true" default="true"
+			description="Configuration property enabling the support of unnamed devices. 
+			Unnamed devices do not communicate their name." />
+
+		<AD id="bluetooth.discovery.unpairOnDeparture" name="bluetooth.discovery.unpairOnDeparture"
+			type="Boolean" cardinality="0" required="true" default="false"
+			description="Configuration property enabling the unpairing of matching devices 
+			(filter given in the fleet description) when they are not reachable anymore" />
+
+		<AD id="bluetooth.discovery.onlinecheck" name="bluetooth.discovery.onlinecheck"
+			type="Boolean" cardinality="0" required="true" default="false"
+			description="This configuration property enables the online check when a device is found. 
+			It turns around the Windows 7 behavior, where the device discovery returns all paired 
+			devices even if they are not reachable anymore. However it introduces a performance cost 
+			(a service discovery for each cached device on every discovery search). It should be used in
+	 		combination with bluetooth.discovery.unpairOnDeparture" />
+
+		<AD id="bluetooth.discovery.period" name="bluetooth.discovery.period"
+			type="Integer" cardinality="0" required="true" default="10"
+			description="Configurable Property specifying the time between two inquiries. 
+			This time is specified in second, and should be carefully chosen. 
+			To many inquiries flood the network and block correct discovery. 
+			A too big period, makes the device dynamism hard to track." />
+
+	</OCD>
+	<Designate pid="de.tum.in.bluetooth">
+		<Object ocdref="de.tum.in.bluetooth" />
+	</Designate>
+</MetaData>

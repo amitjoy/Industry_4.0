@@ -1,0 +1,7 @@
+de.tum.in.client
+de.tum.in.client.adapter
+de.tum.in.client.example
+de.tum.in.client.message
+de.tum.in.client.message.protobuf
+de.tum.in.client.operator
+de.tum.in.client.util

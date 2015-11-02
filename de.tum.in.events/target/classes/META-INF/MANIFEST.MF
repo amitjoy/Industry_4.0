@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445016204791
+Build-Jdk: 1.8.0_60
+Built-By: AMIT
+Bundle-Description: This bundle is responsible for registering all the t
+ he event constants required for the application
+Bundle-Developer: Amit Kumar Mondal
+Bundle-DocURL: http://www.tum.de
+Bundle-ManifestVersion: 2
+Bundle-Name: OSGi Events
+Bundle-SymbolicName: de.tum.in.events
+Bundle-Vendor: TU Munich
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: de.tum.in.events;version="1.0.0.SNAPSHOT"
+Tool: Bnd-2.1.0.20130426-122213

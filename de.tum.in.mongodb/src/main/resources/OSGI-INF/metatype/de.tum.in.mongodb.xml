@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.mongodb" name="MongoDB"
+		description="This provides the configuration for the service used to access MongoDB Database Server ">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/128/Database-Active-icon.png"
+			size="32" />
+
+		<AD id="mongo.db.host" name="mongo.db.host" type="String"
+			cardinality="0" required="false" default="localhost"
+			description="Configurable property to set Mongo DB Server Address" />
+
+		<AD id="mongo.db.port" name="mongo.db.port" type="Integer"
+			cardinality="0" required="false" default="27017"
+			description="Configurable Property to set Mongo DB Server Port No" />
+
+		<AD id="mongo.db.dbname" name="mongo.db.dbname" type="String"
+			cardinality="0" required="true" default="test"
+			description="Configurable Property to set Mongo DB Database Name" />
+
+		<AD id="mongo.db.username" name="mongo.db.username" type="String"
+			cardinality="0" required="true" default="username"
+			description="Configurable Property to set Mongo DB Username" />
+
+		<AD id="mongo.db.password" name="mongo.db.password" type="String"
+			cardinality="0" required="true" default="password"
+			description="Configurable Property to set Mongo DB Password" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.mongodb">
+		<Object ocdref="de.tum.in.mongodb" />
+	</Designate>
+</MetaData>

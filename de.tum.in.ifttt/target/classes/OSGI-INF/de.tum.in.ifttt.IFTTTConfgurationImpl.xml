@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="de.tum.in.ifttt" activate="activate" deactivate="deactivate">
+    <implementation class="de.tum.in.ifttt.IFTTTConfgurationImpl"/>
+    <service servicefactory="false">
+        <provide interface="de.tum.in.ifttt.IFTTTConfiguration"/>
+    </service>
+    <property name="service.pid" value="de.tum.in.ifttt"/>
+</scr:component>

@@ -1,0 +1,22 @@
+#Deployment Plugin Project File
+#Thu Jun 25 01:58:48 CEST 2015
+build.ant.name=<.>/de.tum.in.dp.cache_build.xml
+build.dp.file=<.>/de.tum.in.dp.cache.dp
+build.location=
+bundles.0.bundle_path=/Users/AMIT/Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar
+bundles.0.customizer=false
+bundles.0.headers.count=0
+bundles.0.missing=false
+bundles.0.name=de.tum.in.data.cache-1.0-SNAPSHOT.jar
+bundles.0.symbolic_name=de.tum.in.de.tum.in.data.cache
+bundles.0.version=1.0.0.SNAPSHOT
+bundles.count=1
+certificates.count=0
+general.signbundles=true
+headers.contact.address=admin@amitinside.com
+headers.copyright=Amit Kumar Mondal
+headers.other.headers=DeploymentPackage-Name\:Realtime Data Caching Mechanism
+headers.symbolic.name=de.tum.in.dp.cache
+headers.version=1.0.0
+resources.count=0
+

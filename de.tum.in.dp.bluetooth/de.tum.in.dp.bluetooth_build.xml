@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<project name="build_de.tum.in.dp.bluetooth.dp" default="all" basedir="." >
+<available property="file.exists.../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar" file="../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar"/>
+<target name="check.file.exists ../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar" unless="file.exists.../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar">
+  <fail message="Can not find file ../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar"/>
+</target>
+<available property="file.exists.../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar" file="../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar"/>
+<target name="check.file.exists ../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar" unless="file.exists.../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar">
+  <fail message="Can not find file ../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar"/>
+</target>
+<available property="file.exists.../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar" file="../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar"/>
+<target name="check.file.exists ../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar" unless="file.exists.../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar">
+  <fail message="Can not find file ../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar"/>
+</target>
+<available property="file.exists.../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar" file="../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar"/>
+<target name="check.file.exists ../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar" unless="file.exists.../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar">
+  <fail message="Can not find file ../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar"/>
+</target>
+<available property="file.exists.../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar" file="../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar"/>
+<target name="check.file.exists ../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar" unless="file.exists.../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar">
+  <fail message="Can not find file ../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar"/>
+</target>
+<target name="all">
+  <mkdir dir="/Users/AMIT/Industry_4.0/de.tum.in.dp.bluetooth"/>
+  <antcall target="check.file.exists ../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar"/>
+  <antcall target="check.file.exists ../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar"/>
+  <antcall target="check.file.exists ../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar"/>
+  <antcall target="check.file.exists ../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar"/>
+  <antcall target="check.file.exists ../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar"/>
+  <jar destfile="de.tum.in.dp.bluetooth.dp" manifest="de.tum.in.dp.bluetooth_manifest.mf">
+    <zipfileset file="../de.tum.in.bluecove.fragment/target/de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar" fullpath="de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar" />
+    <zipfileset file="../de.tum.in.bluecove/target/de.tum.in.bluecove-2.1.0.jar" fullpath="de.tum.in.bluecove-2.1.0.jar" />
+    <zipfileset file="../de.tum.in.bluetooth/target/de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar" fullpath="de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar" />
+    <zipfileset file="../de.tum.in.bluetooth.milling.machine/target/de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar" fullpath="de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar" />
+    <zipfileset file="../de.tum.in.bluetooth.milling-machine/target/de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar" fullpath="de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar" />
+  </jar>
+</target>
+
+</project>

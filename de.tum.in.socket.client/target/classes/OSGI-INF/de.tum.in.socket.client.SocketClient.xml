@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="de.tum.in.socket.client" activate="activate" deactivate="deactivate">
+    <implementation class="de.tum.in.socket.client.SocketClient"/>
+    <service servicefactory="false">
+        <provide interface="de.tum.in.socket.client.SocketClient"/>
+    </service>
+    <property name="service.pid" value="de.tum.in.socket.client"/>
+    <reference name="m_activityLogService" interface="de.tum.in.activity.log.IActivityLogService" cardinality="1..1" policy="static" bind="bindActivityLogService" unbind="unbindActivityLogService"/>
+    <reference name="m_cloudService" interface="org.eclipse.kura.cloud.CloudService" cardinality="1..1" policy="static" bind="bindCloudService" unbind="unbindCloudService"/>
+    <reference name="m_configurationService" interface="org.eclipse.kura.configuration.ConfigurationService" cardinality="1..1" policy="static" bind="bindConfigurationService" unbind="unbindConfigurationService"/>
+    <reference name="m_eventAdmin" interface="org.osgi.service.event.EventAdmin" cardinality="1..1" policy="static" bind="bindEventAdmin" unbind="unbindEventAdmin"/>
+    <reference name="m_systemService" interface="org.eclipse.kura.system.SystemService" cardinality="1..1" policy="static" bind="bindSystemService" unbind="unbindSystemService"/>
+</scr:component>

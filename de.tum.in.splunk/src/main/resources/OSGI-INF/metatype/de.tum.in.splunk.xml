@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.splunk" name="Splunk"
+		description="This bundle is used to configure information bus end-points">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-settings-icon.png"
+			size="32" />
+
+		<AD id="bluetooth.realtime.topic" name="bluetooth.realtime.topic" type="String"
+			cardinality="0" required="true" default="$EDC/bluetooth/realtime"
+			description="Configurable property to set Bluetooth Realtime Topic Namespace" />
+
+		<AD id="opcua.realtime.topic" name="opcua.realtime.topic"
+			type="String" cardinality="0" required="true" default="$EDC/opcua/realtime"
+			description="Configurable Property to set OPC-UA Realtime Topic Namespace" />
+
+		<AD id="wifi.realtime.topic" name="wifi.realtime.topic"
+			type="String" cardinality="0" required="true" default="$EDC/wifi/realtime"
+			description="Configurable Property to set Wifi Realtime Topic Namespace" />
+
+		<AD id="event.log.topic" name="event.log.topic"
+			type="String" cardinality="0" required="true" default="$EDC/event/log"
+			description="Configurable Property to set Activity Events Topic Namespace" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.splunk">
+		<Object ocdref="de.tum.in.splunk" />
+	</Designate>
+</MetaData>

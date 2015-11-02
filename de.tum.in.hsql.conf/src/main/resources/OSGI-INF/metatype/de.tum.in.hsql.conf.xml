@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.hsql.conf" name="HyperSQL"
+		description="This is used to configure HyperSQL Connection">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Places-server-database-icon.png"
+			size="32" />
+
+		<AD id="db.service.hsqldb.url" name="db.service.hsqldb.url" type="String"
+			cardinality="0" required="true" default="jdbc:hsqldb:hsql://localhost/iva"
+			description="Configurable property to set HyperSQL Connection URL" />
+
+		<AD id="db.service.hsqldb.cache_rows" name="db.service.hsqldb.cache_rows"
+			type="Integer" cardinality="0" required="false" default="50000"
+			description="Configurable Property to set caching of rows" />
+
+		<AD id="db.service.hsqldb.lob_file_scale" name="db.service.hsqldb.lob_file_scale"
+			type="Integer" cardinality="0" required="false" default="32"
+			description="Configurable Property to set lob file scaling size" />
+
+		<AD id="db.service.hsqldb.defrag_limit" name="db.service.hsqldb.defrag_limit"
+			type="Integer" cardinality="0" required="false" default="0"
+			description="Configurable Property to set defragmentation limit" />
+
+		<AD id="db.service.hsqldb.log_data" name="db.service.hsqldb.log_data"
+			type="Boolean" cardinality="0" required="false" default="false"
+			description="Configurable Property to set log data" />
+
+		<AD id="db.service.hsqldb.log_size" name="db.service.hsqldb.log_size"
+			type="Integer" cardinality="0" required="false" default="50"
+			description="Configurable Property to set log size" />
+
+		<AD id="db.service.hsqldb.nio_data_file" name="db.service.hsqldb.nio_data_file"
+			type="Boolean" cardinality="0" required="false" default="true"
+			description="Configurable Property to set NIO data file" />
+
+		<AD id="db.service.hsqldb.write_delay_millis" name="db.service.hsqldb.write_delay_millis"
+			type="Integer" cardinality="0" required="false" default="500"
+			description="Configurable Property to set write delay in milliseconds" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.hsql.conf">
+		<Object ocdref="de.tum.in.hsql.conf" />
+	</Designate>
+</MetaData>

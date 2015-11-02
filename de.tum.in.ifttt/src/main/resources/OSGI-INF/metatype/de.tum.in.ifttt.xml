@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.ifttt" name="IFTTT"
+		description="This is used to configure IFTTT Automation Channel for IFTTT Tagged Email Trigger. Please make sure you have already setup the triggers in IFTTT before you start using this module.">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/blackvariant/shadow135-system/128/Dashboard-icon.png"
+			size="32" />
+
+		<AD id="ifttt.email.hashtags" name="ifttt.email.hashtags" type="String"
+			cardinality="0" required="true" default="#sample1 #sample2 #sample3"
+			description="Configurable property to set different email IFTTT hashtags (Separated by Gaps)" />
+
+		<AD id="smtp.host" name="smtp.host"
+			type="String" cardinality="0" required="true" default="smtp.gmail.com"
+			description="Configurable Property to set SMTP Server Address" />
+
+		<AD id="smtp.port" name="smtp.port"
+			type="Integer" cardinality="0" required="true" default="465"
+			description="Configurable Property to set SMTP Server Port" />
+
+		<AD id="smtp.username" name="smtp.username"
+			type="String" cardinality="0" required="true" default="username"
+			description="Configurable Property to set SMTP Server Username" />
+
+		<AD id="smtp.password" name="smtp.password"
+			type="String" cardinality="0" required="true" default="password"
+			description="Configurable Property to set SMTP Server Password" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.ifttt">
+		<Object ocdref="de.tum.in.ifttt" />
+	</Designate>
+</MetaData>

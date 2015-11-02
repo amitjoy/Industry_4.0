@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="de.tum.in.mqtt.heartbeat" name="Hearbeat"
+		description="Sends the heartbeat events to the data center using the MQTT protocol">
+
+		<Icon
+			resource="http://icons.iconarchive.com/icons/apathae/chakram-2/128/Heart-icon.png"
+			size="32" />
+
+		<AD id="de.tum.in.mqtt.heartbeat.topic" name="de.tum.in.mqtt.heartbeat.topic" type="String"
+			cardinality="0" required="true" default="mqtt/heartbeat"
+			description="Configurable property to set MQTT Hearbeat Topic Namespace" />
+		
+		<AD id="de.tum.in.mqtt.heartbeat.period" name="de.tum.in.mqtt.heartbeat.period"
+			type="Integer" cardinality="0" required="true" default="10"
+			description="Configurable Property specifying the time period of sending each hearbeat" />
+
+	</OCD>
+
+	<Designate pid="de.tum.in.mqtt.heartbeat">
+		<Object ocdref="de.tum.in.mqtt.heartbeat" />
+	</Designate>
+</MetaData>

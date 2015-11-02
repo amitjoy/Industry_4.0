@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+DeploymentPackage-SymbolicName: de.tum.in.dp.bluetooth
+DeploymentPackage-Version: 1.0.0
+DeploymentPackage-Copyright: Amit Kumar Mondal
+DeploymentPackage-ContactAddress: admin@amitinside.com
+DeploymentPackage-Description: This deployment package is used to configure Bluetooth Serial Port Profile in Eclipse Kura
+DeploymentPackage-Name: Bluetooth Serial Port Profile Configuration
+
+Name: de.tum.in.bluecove.fragment-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.bluecove.fragment
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.bluecove-2.1.0.jar
+Bundle-SymbolicName: de.tum.in.bluecove
+Bundle-Version: 2.1.0
+
+Name: de.tum.in.bluetooth-0.0.1-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.bluetooth
+Bundle-Version: 0.0.1.SNAPSHOT
+
+Name: de.tum.in.bluetooth.milling.machine-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.bluetooth.milling.machine
+Bundle-Version: 1.0.0.SNAPSHOT
+
+Name: de.tum.in.bluetooth.milling-machine-1.0-SNAPSHOT.jar
+Bundle-SymbolicName: de.tum.in.bluetooth.milling-machine
+Bundle-Version: 1.0.0.SNAPSHOT
