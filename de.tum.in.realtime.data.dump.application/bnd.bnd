@@ -17,7 +17,9 @@ JPM-Command:			dump
 -buildpath: \
 	osgi.enroute.base.api,\
 	com.google.guava,\
-	org.jooq.jool
+	org.jooq.jool,\
+	de.tum.in.realtime.data.operation.api;version=latest,\
+	de.tum.in.realtime.data.operation.provider;version=latest
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
