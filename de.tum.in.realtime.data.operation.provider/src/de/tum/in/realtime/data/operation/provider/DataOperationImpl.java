@@ -13,31 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tum.in.realtime.data.dump.application;
+package de.tum.in.realtime.data.operation.provider;
 
 import org.osgi.service.component.annotations.Component;
 
-import osgi.enroute.configurer.api.RequireConfigurerExtender;
-import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
-import osgi.enroute.rest.api.REST;
-import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
-import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
+import de.tum.in.realtime.data.operation.api.DataOperation;
 
-@RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
-@RequireBootstrapWebResource(resource = "css/bootstrap.css")
-@RequireWebServerExtender
-@RequireConfigurerExtender
-@Component(name = "de.tum.in.realtime.data.dump")
 /**
- * Realtime Data UI Application
- * 
- * @author AMIT KUMAR MONDAL
+ * Service Interface {@link DataOperation} Implementation
  *
+ * @author AMIT KUMAR MONDAL
  */
-public final class DumpApplication implements REST {
-
-	public String getUpper(final String string) {
-		return string.toUpperCase();
-	}
-
+@Component(name = "de.tum.in.realtime.data.operation")
+public final class DataOperationImpl implements DataOperation {
+	// TODO
 }
