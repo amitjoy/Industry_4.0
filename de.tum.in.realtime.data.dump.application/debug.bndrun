@@ -1,0 +1,12 @@
+#
+# DUMP APPLICATION DEBUG RUN SPECIFICATION
+#
+
+-include: ~de.tum.in.realtime.data.dump.bndrun
+
+-runrequires.debug:  ${debug-bundles}
+
+-runtrace: true
+
+-runbundles: \
+	${error;Resolve first}

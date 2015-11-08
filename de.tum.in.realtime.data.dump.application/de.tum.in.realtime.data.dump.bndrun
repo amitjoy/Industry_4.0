@@ -1,0 +1,17 @@
+#
+#  RUN SPECIFICATION
+#
+
+
+Bundle-Version:				1.0.0.${tstamp}
+Bundle-SymbolicName:		de.tum.in.realtime.data.dump.application.launch
+JPM-Command:					dump
+
+
+-runfw:						org.eclipse.osgi
+
+-runrequires:  \
+	osgi.identity;filter:='(osgi.identity=de.tum.in.realtime.data.dump.application)'
+
+-runbundles: \
+	${error;Resolve first}

@@ -1,0 +1,23 @@
+Bundle-Version: 1.0.0.${tstamp}
+Bundle-Description: \
+	This is the application project used to dump realtime data from Industry Field Devices and visualize it accordingly
+
+Private-Package:  \
+	de.tum.in.realtime.data.dump.application
+
+EnRoute-Application: 	de.tum.in.realtime.data.dump
+JPM-Command:			dump
+
+-includeresource: \
+	{readme.md}, \
+	{configuration=configuration}, \
+	{static=static}, \
+	web=web
+
+-buildpath: \
+	osgi.enroute.base.api,\
+	com.google.guava,\
+	org.jooq.jool
+	
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12

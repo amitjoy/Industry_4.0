@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<repository increment="1447017448000" name="Local" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.google.guava"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="b17344ba87ba343ecce66c8abcbb185423bc4be99c254164f5c6e8e3879eb057"/>
+      <attribute name="url" value="com.google.guava/com.google.guava-19.0.0.jar"/>
+      <attribute name="size" type="Long" value="2310175"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.annotations"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.base"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.hash"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.primitives,com.google.common.base,javax.annotation,com.google.common.math"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.escape"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.reflect"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.collect,com.google.common.primitives"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.html"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.escape,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.util.concurrent"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation,sun.misc,com.google.common.collect,com.google.common.math,com.google.common.primitives"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.net"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.primitives,com.google.common.hash,com.google.common.io,com.google.common.collect,com.google.common.escape"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.math"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.base,com.google.common.primitives,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.primitives"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,sun.misc"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.cache"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.collect,com.google.common.util.concurrent,javax.annotation,com.google.common.base,com.google.common.primitives,sun.misc"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.xml"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.escape,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.eventbus"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.base,com.google.common.collect,com.google.common.util.concurrent,javax.annotation,com.google.common.cache,com.google.common.reflect"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.io"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.math,com.google.common.hash,com.google.common.collect,com.google.common.primitives"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.collect"/>
+      <attribute name="version" type="Version" value="19.0.0.rc2"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="19.0.0.rc2"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation,com.google.common.primitives,com.google.common.math"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.annotation)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.misc)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.jooq.jool"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="578c4d665ca8878f8fcdaa15c26fca80759c10c26d315d394668de98ba8b39a1"/>
+      <attribute name="url" value="org.jooq.jool/org.jooq.jool-0.9.8.jar"/>
+      <attribute name="size" type="Long" value="275814"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda.fi.lang"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda.fi.util"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda.fi.util.function"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda.function"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <directive name="uses" value="org.jooq.lambda.tuple"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <directive name="uses" value="org.jooq.lambda.fi.lang,org.jooq.lambda.fi.util,org.jooq.lambda.fi.util.function,org.jooq.lambda.function,org.jooq.lambda.tuple"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jooq.lambda.tuple"/>
+      <attribute name="version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <attribute name="bundle-symbolic-name" value="org.jooq.jool"/>
+      <attribute name="bundle-version" type="Version" value="0.9.8.SNAPSHOT"/>
+      <directive name="uses" value="org.jooq.lambda.function"/>
+    </capability>
+  </resource>
+</repository>
