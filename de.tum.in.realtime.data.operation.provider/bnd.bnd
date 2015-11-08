@@ -1,0 +1,27 @@
+#
+#  BUNDLE 
+#
+
+
+Bundle-Version:					1.0.0.${tstamp}
+Bundle-Description: Realtime Data Operation Service Interface Implementation
+
+Private-Package:  \
+	de.tum.in.realtime.data.operation.provider
+	
+-buildpath:  \
+	osgi.enroute.base.api;version=1.0
+	
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12
+
+-includeresource: {readme.md}
+
+
+-runrequires:  \
+	osgi.identity;filter:='(osgi.identity=de.tum.in.realtime.data.operation.provider)'
+	
+-runbundles: \
+	${error;Resolve first}
+Bundle-Copyright: Amit Kumar Mondal
+Bundle-ContactAddress: admin@amitinside.com
