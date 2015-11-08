@@ -6,7 +6,9 @@ Private-Package:  \
 	
 -buildpath: \
 	osgi.enroute.base.api;version=1.0,\
-	de.tum.in.realtime.data.operation.api;version=latest
+	de.tum.in.realtime.data.operation.api;version=latest,\
+	com.google.guava,\
+	org.jooq.jool
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
@@ -21,5 +23,3 @@ Private-Package:  \
 	
 Bundle-Copyright: Amit Kumar Mondal
 Bundle-ContactAddress: admin@amitinside.com
-Import-Package: \
-	de.tum.in.realtime.data.operation.api

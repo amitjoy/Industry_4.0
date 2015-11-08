@@ -16,7 +16,9 @@
 package de.tum.in.realtime.data.dump.application;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
+import de.tum.in.realtime.data.operation.api.DataOperation;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
 import osgi.enroute.rest.api.REST;
@@ -30,11 +32,14 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 @Component(name = "de.tum.in.realtime.data.dump")
 /**
  * Realtime Data UI Application
- * 
+ *
  * @author AMIT KUMAR MONDAL
  *
  */
 public final class DumpApplication implements REST {
+
+	@Reference
+	private volatile DataOperation dataOperation;
 
 	public String getUpper(final String string) {
 		return string.toUpperCase();

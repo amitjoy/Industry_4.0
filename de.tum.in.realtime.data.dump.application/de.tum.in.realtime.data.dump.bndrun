@@ -37,4 +37,6 @@ JPM-Command:					dump
 	osgi.enroute.logger.simple.provider;version='[1.2.1,1.2.2)',\
 	osgi.enroute.rest.simple.provider;version='[2.0.2,2.0.3)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
-	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)'
+	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)',\
+	de.tum.in.realtime.data.operation.api;version=latest,\
+	de.tum.in.realtime.data.operation.provider;version=latest

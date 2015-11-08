@@ -4,9 +4,6 @@ Bundle-Description: API project for realtime data dump service innterface
 Export-Package:  \
 	de.tum.in.realtime.data.operation.api;provide:=true
 
-Require-Capability: \
-	compile-only
-
 -buildpath: \
 	osgi.enroute.base.api;version=1.0
 
