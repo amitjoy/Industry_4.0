@@ -1,8 +1,3 @@
-#
-#  BUNDLE 
-#
-
-
 Bundle-Version:					1.0.0.${tstamp}
 Bundle-Description: This bundle is repsonsible to listen to all the mqtt data collection
 
@@ -11,7 +6,11 @@ Private-Package:  \
 	
 -buildpath: \
 	osgi.enroute.base.api;version=1.0,\
-	de.tum.in.realtime.data.operation.api;version=latest
+	de.tum.in.realtime.data.operation.api;version=latest,\
+	org.fusesource.hawtbuf.hawtbuf,\
+	org.fusesource.hawtdispatch.hawtdispatch,\
+	org.fusesource.hawtdispatch.hawtdispatch-transport,\
+	org.fusesource.mqtt-client.mqtt-client
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12

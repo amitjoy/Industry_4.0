@@ -16,6 +16,7 @@
 package de.tum.in.realtime.data.operation.provider;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -39,9 +40,9 @@ public final class DataOperationImpl implements DataOperation {
 
 	/** {@inheritDoc}} */
 	@Override
-	public boolean retrieveById(final String id) {
+	public Optional<RealtimeData> retrieveById(final String id) {
 		// TODO Auto-generated method stub
-		return false;
+		return Optional.empty();
 	}
 
 	/** {@inheritDoc}} */

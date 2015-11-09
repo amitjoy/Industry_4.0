@@ -22,26 +22,29 @@ import de.tum.in.realtime.data.operation.api.DataOperation;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
 import osgi.enroute.rest.api.REST;
+import osgi.enroute.rest.api.RESTRequest;
 import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
+/**
+ * Realtime Data UI Application
+ *
+ * @author AMIT KUMAR MONDAL
+ */
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender
 @RequireConfigurerExtender
 @Component(name = "de.tum.in.realtime.data.dump")
-/**
- * Realtime Data UI Application
- *
- * @author AMIT KUMAR MONDAL
- *
- */
 public final class DumpApplication implements REST {
 
+	/**
+	 * MQTT Data Operation Reference
+	 */
 	@Reference
-	private volatile DataOperation dataOperation;
+	private DataOperation dataOperation;
 
-	public String getUpper(final String string) {
+	public String getUpper(final RESTRequest request, final String string) {
 		return string.toUpperCase();
 	}
 

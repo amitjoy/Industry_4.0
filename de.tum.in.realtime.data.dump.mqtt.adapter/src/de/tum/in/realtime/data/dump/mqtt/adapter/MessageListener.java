@@ -13,31 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tum.in.realtime.data.operation.api;
-
-import java.util.List;
-import java.util.Optional;
+package de.tum.in.realtime.data.dump.mqtt.adapter;
 
 /**
- * Data Dump Operation
+ * Message Processor
  *
  * @author AMIT KUMAR MONDAL
+ *
  */
-public interface DataOperation {
+@FunctionalInterface
+public interface MessageListener {
 
 	/**
-	 * Retrieves all saved {@link RealtimeData}
+	 * Processes Received Message
 	 */
-	public List<RealtimeData> retrieveAll();
-
-	/**
-	 * Retrieves one specific {@link RealtimeData}
-	 */
-	public Optional<RealtimeData> retrieveById(final String id);
-
-	/**
-	 * Saves the provided {@link RealtimeData} to the database
-	 */
-	public boolean save(final RealtimeData realtimeData);
+	public void processMessage(final String message);
 
 }
