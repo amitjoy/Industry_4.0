@@ -15,9 +15,12 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.operation.provider;
 
+import java.util.List;
+
 import org.osgi.service.component.annotations.Component;
 
 import de.tum.in.realtime.data.operation.api.DataOperation;
+import de.tum.in.realtime.data.operation.api.RealtimeData;
 
 /**
  * Service Interface {@link DataOperation} Implementation
@@ -26,5 +29,26 @@ import de.tum.in.realtime.data.operation.api.DataOperation;
  */
 @Component(name = "de.tum.in.realtime.data.operation")
 public final class DataOperationImpl implements DataOperation {
-	// TODO
+
+	/** {@inheritDoc}} */
+	@Override
+	public List<RealtimeData> retrieveAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/** {@inheritDoc}} */
+	@Override
+	public boolean retrieveById(final String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/** {@inheritDoc}} */
+	@Override
+	public boolean save(final RealtimeData realtimeData) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

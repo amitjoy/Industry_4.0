@@ -15,28 +15,14 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.operation.api;
 
-import java.util.List;
-
 /**
- * Data Dump Operation
+ * Real time Data POJO
  *
  * @author AMIT KUMAR MONDAL
+ *
  */
-public interface DataOperation {
+public final class RealtimeData {
 
-	/**
-	 * Retrieves all saved {@link RealtimeData}
-	 */
-	public List<RealtimeData> retrieveAll();
-
-	/**
-	 * Retrieves one specific {@link RealtimeData}
-	 */
-	public boolean retrieveById(final String id);
-
-	/**
-	 * Saves the provided {@link RealtimeData} to the database
-	 */
-	public boolean save(final RealtimeData realtimeData);
+	// TODO
 
 }
