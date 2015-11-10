@@ -15,10 +15,16 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.dump.application;
 
+import java.util.List;
+import java.util.Locale;
+
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.google.common.collect.Lists;
+
 import de.tum.in.realtime.data.operation.api.DataOperation;
+import de.tum.in.realtime.data.operation.api.RealtimeData;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
 import osgi.enroute.rest.api.REST;
@@ -43,6 +49,26 @@ public final class DumpApplication implements REST {
 	 */
 	@Reference
 	private DataOperation dataOperation;
+
+	/**
+	 * REST Service to retrieve the saved real time industrial data
+	 */
+	public RealtimeData[] getData(final RESTRequest request) {
+		final RealtimeData data1 = new RealtimeData();
+		data1.name = "HELLO";
+		final RealtimeData data2 = new RealtimeData();
+		data2.name = "HELLO";
+		final List<RealtimeData> datas = Lists.newArrayList();
+		final RealtimeData[] iotData = new RealtimeData[] { data1, data2 };
+		datas.add(data1);
+		datas.add(data2);
+		System.out.println("INSIDE");
+		return iotData;
+	}
+
+	public String getLower(final RESTRequest request, final String string) {
+		return string.toLowerCase(Locale.GERMANY);
+	}
 
 	public String getUpper(final RESTRequest request, final String string) {
 		return string.toUpperCase();

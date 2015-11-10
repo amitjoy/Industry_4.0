@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <link rel="icon" href=/de.tum.in.realtime.data.dump/favicon.ico">
 
-<title></title>
+<title>CPS Data Dump Server</title>
 
 <link rel="stylesheet" type="text/css"
 	href="/osgi.enroute.webresource/${bsn}/${Bundle-Version}/*.css">
@@ -28,10 +28,10 @@
 		
 		<div class="header">
 			<ul class="nav nav-pills pull-right">
-				<li ng-class="{active: page() == '/'}"><a href="#/">Bluetooth Data</a></li>
-				<li ng-class="{active: page() == '/about'}"><a href="#/about">Wifi Data</a></li>
+				<li ng-class="{active: page() == '/'}"><a href="#/bluetooth">Bluetooth Data</a></li>
+				<li ng-class="{active: page() == '/wifi'}"><a href="#/wifi">Wifi Data</a></li>
 			</ul>
-			<h3 class="text-muted">Dump</h3>
+			<h3 class="text-muted">CPS Data Dump</h3>
 			<div ng-repeat="alert in alerts" class="alert alert-{{alert.type || 'alert'}} alert-dismissible">
 				{{alert.msg}}
 				<button type="button" ng-click='closeAlert($index)' class="close pull-right"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

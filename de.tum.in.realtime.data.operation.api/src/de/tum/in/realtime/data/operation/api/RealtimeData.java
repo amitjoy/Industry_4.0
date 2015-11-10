@@ -15,14 +15,19 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.operation.api;
 
+import org.osgi.dto.DTO;
+
 /**
  * Real time Data POJO
  *
  * @author AMIT KUMAR MONDAL
  *
  */
-public final class RealtimeData {
+public final class RealtimeData extends DTO {
 
-	// TODO
+	/**
+	 * The name of the blob
+	 */
+	public String name;
 
 }

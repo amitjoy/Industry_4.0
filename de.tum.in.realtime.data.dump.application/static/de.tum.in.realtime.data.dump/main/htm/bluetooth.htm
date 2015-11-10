@@ -1,0 +1,24 @@
+<section ng-cloak>
+	<div ng-init=bm.refresh()>
+		<table class="table table-small">
+
+			<colgroup>
+				<col style="width: 30%; max-width: 10em" class=control-label>
+				<col class=form-control>
+			</colgroup>
+
+			<tbody>
+				<tr>
+					<td><label for="bm.resources" class="control-label">Realtime Data</label>
+					</td>
+					<td>
+						<table class="table" ng-show=bm.resources.length>
+							<tr ng-repeat="r in bm.resources">
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>

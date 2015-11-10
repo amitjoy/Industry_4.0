@@ -25,3 +25,4 @@ JPM-Command:			dump
 	osgi.enroute.junit.wrapper;version=4.12
 Bundle-Copyright: Amit Kumar Mondal
 Bundle-ContactAddress: admin@amitinside.com
+Bundle-Vendor: TU Munich

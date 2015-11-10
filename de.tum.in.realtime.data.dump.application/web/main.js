@@ -2,16 +2,21 @@
 
 (function() {
 
-	var MODULE = angular.module('de.tum.in.realtime.data.dump',
-			[ 'ngRoute', 'ngResource' ]);
+	var MODULE = angular.module('de.tum.in.realtime.data.dump', [ 'ngRoute',
+			'ngResource']);
 
-	MODULE.config( function($routeProvider) {
-		$routeProvider.when('/', { controller: mainProvider, templateUrl: '/de.tum.in.realtime.data.dump/main/htm/home.htm'});
-		$routeProvider.when('/about', { templateUrl: '/de.tum.in.realtime.data.dump/main/htm/about.htm'});
+	MODULE.config(function($routeProvider) {
+		$routeProvider.when('/', {
+			controller : mainProvider,
+			templateUrl : '/de.tum.in.realtime.data.dump/main/htm/bluetooth.htm'
+		});
+		$routeProvider.when('/wifi', {
+			templateUrl : '/de.tum.in.realtime.data.dump/main/htm/wifi.htm'
+		});
 		$routeProvider.otherwise('/');
 	});
-	
-	MODULE.run( function($rootScope, $location) {
+
+	MODULE.run(function($rootScope, $location) {
 		$rootScope.alerts = [];
 		$rootScope.closeAlert = function(index) {
 			$rootScope.alerts.splice(index, 1);
@@ -20,24 +25,41 @@
 			return $location.path();
 		}
 	});
-	
-	
-	
-	var mainProvider = function($scope, $http) {
+
+	function BackendManager($resource, error)
+	{
+		var THIS = this;
 		
-		$scope.upper = function() {
-			var name = prompt("Under what name?");
-			if ( name ) {
-				$http.get('/rest/upper/'+name).then(
-						function(d) {
-							$scope.alerts.push( { type: 'success', msg: d.data });
-						}, function(d) {
-							$scope.alerts.push( { type: 'danger', msg: 'Failed with ['+ d.status + '] '+ d.statusText });
-						}
-				);
-			}
+		THIS.resources = [];
+		
+		var interceptor = {
+			responseError : error
 		};
-	
+		
+		var backends = $resource("/rest/data", {}, {
+			list : {
+				method : 'GET',
+				interceptor : interceptor,
+				isArray : true
+			}
+		});
+		
+		
+		THIS.refresh = function() {
+			THIS.resources = backends.list({});
+		}
+		
 	}
-	
+
+	var mainProvider = function($scope, $resource) {
+		function error(e) {
+			$scope.alerts.push({
+				type : 'danger',
+				msg : e.status
+			});
+		}
+
+		$scope.bm = new BackendManager($resource, error);
+	}
+
 })();
