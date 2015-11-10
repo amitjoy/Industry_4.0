@@ -32,4 +32,5 @@ public final class RealtimeData extends DTO {
 	public String torque_x;
 	public String torque_y;
 	public String torque_z;
+	public String type;
 }

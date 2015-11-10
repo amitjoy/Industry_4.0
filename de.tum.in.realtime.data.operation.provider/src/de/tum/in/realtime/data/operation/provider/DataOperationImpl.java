@@ -48,7 +48,7 @@ public final class DataOperationImpl implements DataOperation {
 	/**
 	 * MongoDB Database Name
 	 */
-	private static final String MONGO_DB_DATABASE_NAME = "testdb";
+	private static final String MONGO_DB_DATABASE_NAME = "IOT";
 
 	/**
 	 * MongoDB Server Address
@@ -89,25 +89,18 @@ public final class DataOperationImpl implements DataOperation {
 
 	/** {@inheritDoc}} */
 	@Override
-	public List<RealtimeData> retrieveAll() {
+	public List<RealtimeData> retrieveAll(final String type) {
 		final List<RealtimeData> realtimeDatas = Lists.newArrayList();
 		final BasicDBObject searchQuery = new BasicDBObject();
-		searchQuery.put("name", "mkyong");
+		searchQuery.put("type", type);
 
-		final DBCursor cursor = this.table.get().find();
+		final DBCursor cursor = this.table.get().find(searchQuery);
 
 		while (cursor.hasNext()) {
 			final DBObject object = cursor.next();
 			realtimeDatas.add(this.unwrap(object));
 		}
 		return realtimeDatas;
-	}
-
-	/** {@inheritDoc}} */
-	@Override
-	public Optional<RealtimeData> retrieveById(final String id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
 	}
 
 	/** {@inheritDoc}} */
@@ -121,6 +114,7 @@ public final class DataOperationImpl implements DataOperation {
 		document.put("torque_y", realtimeData.torque_y);
 		document.put("torque_z", realtimeData.torque_z);
 		document.put("time", realtimeData.time);
+		document.put("type", realtimeData.type);
 		this.table.get().insert(document);
 		return true;
 	}

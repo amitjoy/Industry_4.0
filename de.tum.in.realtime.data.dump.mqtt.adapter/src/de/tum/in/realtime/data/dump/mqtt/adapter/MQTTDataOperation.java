@@ -22,7 +22,23 @@ public final class MQTTDataOperation {
 	/**
 	 * Data Subscription Channel
 	 */
-	private static final String DATA_DUMP_CHANNEL = "myChannel";
+	private static final String DATA_DUMP_CHANNEL = "tum/splunk/data/dump";
+
+	/**
+	 * MQTT Server
+	 */
+	private static final String MQTT_SERVER = "iot.eclipse.org";
+
+	/**
+	 * TEST Function TODO Remove it
+	 * 
+	 * @param args
+	 */
+	public static void main(final String[] args) {
+		final MQTTClient mqttClient = new MQTTClient("iot.eclipse.org");
+		mqttClient.publish("tum/splunk/data/dump",
+				"force_x=972, force_y=214, force_z=338, torque_x=913, torque_y=794, torque_z=67, time=433, type=bluetooth");
+	}
 
 	/**
 	 * Data Dump Operation
@@ -40,7 +56,7 @@ public final class MQTTDataOperation {
 	 */
 	@Activate
 	public void activate() {
-		this.mqttClient = new MQTTClient("iot.eclipse.org");
+		this.mqttClient = new MQTTClient(MQTT_SERVER);
 		this.mqttClient.subscribe(DATA_DUMP_CHANNEL, message -> {
 			final List<String> list = Arrays.stream(message.split(", ")).map(msg -> Arrays.asList(msg.split("=")))
 					.flatMap(Collection::stream).collect(Collectors.toList());
@@ -70,6 +86,7 @@ public final class MQTTDataOperation {
 		data.torque_y = list.get(9);
 		data.torque_z = list.get(11);
 		data.time = list.get(13);
+		data.type = list.get(15);
 		return data;
 	}
 

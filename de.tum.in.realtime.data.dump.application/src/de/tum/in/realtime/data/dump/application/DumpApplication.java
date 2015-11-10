@@ -15,14 +15,10 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.dump.application;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-
-import com.google.common.collect.Lists;
 
 import de.tum.in.realtime.data.operation.api.DataOperation;
 import de.tum.in.realtime.data.operation.model.RealtimeData;
@@ -34,7 +30,7 @@ import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
 /**
- * Realtime Data UI Application
+ * Real time Data UI Application
  *
  * @author AMIT KUMAR MONDAL
  */
@@ -52,44 +48,11 @@ public final class DumpApplication implements REST {
 	private DataOperation dataOperation;
 
 	/**
-	 * REST Service to retrieve the saved real time industrial data
+	 * REST Service to retrieve the saved real time industrial data for the type
+	 * specified
 	 */
 	public Collection<? extends RealtimeData> getData(final RESTRequest request, final String type) {
-		final List<RealtimeData> datas = Lists.newArrayList();
-
-		if ("bluetooth".equals(type)) {
-			System.out.println("INISDE");
-			final RealtimeData data1 = new RealtimeData();
-			data1.force_x = "HELLO1";
-			data1.force_y = "HELLO1";
-			data1.force_z = "HELLO1";
-			data1.torque_x = "HELLO1";
-			data1.torque_y = "HELLO1";
-			data1.torque_z = "HELLO1";
-			data1.time = LocalDateTime.now().toString();
-			datas.add(data1);
-		}
-
-		if ("wifi".equals(type)) {
-			System.out.println("INSIDE");
-			final RealtimeData data1 = new RealtimeData();
-			data1.force_x = "HELLO1";
-			data1.force_y = "HELLO1";
-			data1.force_z = "HELLO1";
-			data1.torque_x = "HELLO1";
-			data1.torque_y = "HELLO1";
-			data1.torque_z = "HELLO1";
-			final RealtimeData data2 = new RealtimeData();
-			data2.force_x = "HELLO1";
-			data2.force_y = "HELLO1";
-			data2.force_z = "HELLO1";
-			data2.torque_x = "HELLO1";
-			data2.torque_y = "HELLO1";
-			data2.torque_z = "HELLO1";
-			datas.add(data1);
-			datas.add(data2);
-		}
-		return datas;
+		return this.dataOperation.retrieveAll(type);
 	}
 
 }

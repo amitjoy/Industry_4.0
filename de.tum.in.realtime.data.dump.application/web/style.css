@@ -1,6 +1,5 @@
 /*
 	de.tum.in.realtime.data.dump Style Sheet
-
 */
 
 /* Space out content a bit */
@@ -16,6 +15,11 @@ body {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+/* Table Customization */
+tr:nth-of-type(odd) {
+      background-color:#cfd;
+    }
 
 /* Custom page header */
 .header {

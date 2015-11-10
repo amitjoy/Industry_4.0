@@ -16,7 +16,6 @@
 package de.tum.in.realtime.data.operation.api;
 
 import java.util.List;
-import java.util.Optional;
 
 import de.tum.in.realtime.data.operation.model.RealtimeData;
 
@@ -28,14 +27,9 @@ import de.tum.in.realtime.data.operation.model.RealtimeData;
 public interface DataOperation {
 
 	/**
-	 * Retrieves all saved {@link RealtimeData}
+	 * Retrieves all saved {@link RealtimeData} for the type specified
 	 */
-	public List<RealtimeData> retrieveAll();
-
-	/**
-	 * Retrieves one specific {@link RealtimeData}
-	 */
-	public Optional<RealtimeData> retrieveById(final String id);
+	public List<RealtimeData> retrieveAll(final String type);
 
 	/**
 	 * Saves the provided {@link RealtimeData} to the database

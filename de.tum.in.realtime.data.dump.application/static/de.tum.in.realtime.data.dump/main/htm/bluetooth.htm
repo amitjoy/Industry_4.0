@@ -13,6 +13,14 @@
 					</td>
 					<td>
 						<table class="table" ng-show=bm.bluetoothResources.length>
+								<tr>
+								    <th>Force X</th>
+								    <th>Force Y</th>
+								    <th>Force Z</th>
+								    <th>Torque X</th>
+								    <th>Torque Y</th>
+								    <th>Torque Z</th>
+								</tr>
 							<tr ng-repeat="r in bm.bluetoothResources | orderBy: 'time'"
 								ng-class="{active:bm.value==r.time}">
 								<td ng-click=bm.read(r)>{{r.force_x}}</td>
