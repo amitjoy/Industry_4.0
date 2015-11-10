@@ -33,7 +33,17 @@
 		
 		THIS.bluetoothResources = [];
 		THIS.wifiResources = [];
-		THIS.name = "";
+		
+		
+		THIS.force_x = ""; 
+		THIS.force_y = ""; 
+		THIS.force_z = ""; 
+		THIS.torque_x = ""; 
+		THIS.torque_y = ""; 
+		THIS.torque_z = ""; 
+		THIS.time = ""; 
+		
+		
 		THIS.type1 = "bluetooth";
 		THIS.type2 = "wifi";
 		
@@ -52,13 +62,25 @@
 		THIS.refresh = function() {
 			THIS.bluetoothResources = backends.list({type: THIS.type1});
 			THIS.wifiResources = backends.list({type: THIS.type2});
-			THIS.name = "";
+			
+			THIS.force_x = ""; 
+			THIS.force_y = ""; 
+			THIS.force_z = ""; 
+			THIS.torque_x = ""; 
+			THIS.torque_y = ""; 
+			THIS.torque_z = ""; 
+			THIS.time = ""; 
 		}
 		
 		THIS.read = function(meta) {
-			THIS.name = meta.name;
+			THIS.force_x = meta.force_x; 
+			THIS.force_y = meta.force_y; 
+			THIS.force_z = meta.force_z; 
+			THIS.torque_x = meta.torque_x; 
+			THIS.torque_y = meta.torque_y; 
+			THIS.torque_z = meta.torque_z; 
+			THIS.time = meta.time; 
 		}
-		
 	}
 
 	var mainProvider = function($scope, $resource) {
@@ -68,7 +90,6 @@
 				msg : e.status
 			});
 		}
-
 		$scope.bm = new BackendManager($resource, error);
 	}
 

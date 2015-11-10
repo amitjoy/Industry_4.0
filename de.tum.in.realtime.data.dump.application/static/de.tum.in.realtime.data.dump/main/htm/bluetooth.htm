@@ -13,9 +13,14 @@
 					</td>
 					<td>
 						<table class="table" ng-show=bm.bluetoothResources.length>
-							<tr ng-repeat="r in bm.bluetoothResources | orderBy: 'name'"
-								ng-class="{active:bm.name==r.name}">
-								<td ng-click=bm.read(r)>{{r.name}}</td>
+							<tr ng-repeat="r in bm.bluetoothResources | orderBy: 'time'"
+								ng-class="{active:bm.value==r.time}">
+								<td ng-click=bm.read(r)>{{r.force_x}}</td>
+								<td ng-click=bm.read(r)>{{r.force_y}}</td>
+								<td ng-click=bm.read(r)>{{r.force_z}}</td>
+								<td ng-click=bm.read(r)>{{r.torque_x}}</td>
+								<td ng-click=bm.read(r)>{{r.torque_y}}</td>
+								<td ng-click=bm.read(r)>{{r.torque_z}}</td>
 							</tr>
 						</table>
 					</td>

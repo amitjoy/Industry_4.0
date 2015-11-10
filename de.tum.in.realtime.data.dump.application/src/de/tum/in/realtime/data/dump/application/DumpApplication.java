@@ -15,9 +15,9 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.dump.application;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -25,7 +25,7 @@ import org.osgi.service.component.annotations.Reference;
 import com.google.common.collect.Lists;
 
 import de.tum.in.realtime.data.operation.api.DataOperation;
-import de.tum.in.realtime.data.operation.api.RealtimeData;
+import de.tum.in.realtime.data.operation.model.RealtimeData;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
 import osgi.enroute.rest.api.REST;
@@ -58,31 +58,38 @@ public final class DumpApplication implements REST {
 		final List<RealtimeData> datas = Lists.newArrayList();
 
 		if ("bluetooth".equals(type)) {
+			System.out.println("INISDE");
 			final RealtimeData data1 = new RealtimeData();
-			data1.name = "HELLO1";
-			final RealtimeData data2 = new RealtimeData();
-			data2.name = "HELLO2";
+			data1.force_x = "HELLO1";
+			data1.force_y = "HELLO1";
+			data1.force_z = "HELLO1";
+			data1.torque_x = "HELLO1";
+			data1.torque_y = "HELLO1";
+			data1.torque_z = "HELLO1";
+			data1.time = LocalDateTime.now().toString();
 			datas.add(data1);
-			datas.add(data2);
 		}
 
 		if ("wifi".equals(type)) {
+			System.out.println("INSIDE");
 			final RealtimeData data1 = new RealtimeData();
-			data1.name = "HELLO3";
+			data1.force_x = "HELLO1";
+			data1.force_y = "HELLO1";
+			data1.force_z = "HELLO1";
+			data1.torque_x = "HELLO1";
+			data1.torque_y = "HELLO1";
+			data1.torque_z = "HELLO1";
 			final RealtimeData data2 = new RealtimeData();
-			data2.name = "HELLO4";
+			data2.force_x = "HELLO1";
+			data2.force_y = "HELLO1";
+			data2.force_z = "HELLO1";
+			data2.torque_x = "HELLO1";
+			data2.torque_y = "HELLO1";
+			data2.torque_z = "HELLO1";
 			datas.add(data1);
 			datas.add(data2);
 		}
 		return datas;
-	}
-
-	public String getLower(final RESTRequest request, final String string) {
-		return string.toLowerCase(Locale.GERMANY);
-	}
-
-	public String getUpper(final RESTRequest request, final String string) {
-		return string.toUpperCase();
 	}
 
 }

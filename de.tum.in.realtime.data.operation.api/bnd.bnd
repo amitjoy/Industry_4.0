@@ -1,8 +1,9 @@
 Bundle-Version:1.0.0.${tstamp}
 Bundle-Description: API project for realtime data dump service innterface
 
-Export-Package:  \
-	de.tum.in.realtime.data.operation.api;provide:=true
+Export-Package: \
+	de.tum.in.realtime.data.operation.api,\
+	de.tum.in.realtime.data.operation.model
 
 -buildpath: \
 	osgi.enroute.base.api;version=1.0

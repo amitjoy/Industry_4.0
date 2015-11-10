@@ -18,6 +18,8 @@ package de.tum.in.realtime.data.operation.api;
 import java.util.List;
 import java.util.Optional;
 
+import de.tum.in.realtime.data.operation.model.RealtimeData;
+
 /**
  * Data Dump Operation
  *
