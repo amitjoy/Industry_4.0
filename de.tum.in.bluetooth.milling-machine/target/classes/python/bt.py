@@ -98,7 +98,7 @@ def StartMillingMachine(addr):
         print('Connected to: {0}, port: {1}'.format(clientInfo[0], clientInfo[1]))
         try:
             while True:
-                data = str(randint(1,1000));
+                data = "force_x=" + str(randint(1,1000)) + ", force_y=" + str(randint(1,1000)) + ", force_z=" + str(randint(1,1000)) + ", torque_x="+ str(randint(1,1000)) + ", torque_y=" + str(randint(1,1000)) + ", torque_z=" + str(randint(1,1000)) + ", time=" + str(randint(1,1000)) + ", type=bluetooth";
                 print("Broadcasting data..." + data)
                 client.send(data)
                 time.sleep(3)

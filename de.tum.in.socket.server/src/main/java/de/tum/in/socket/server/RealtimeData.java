@@ -94,8 +94,8 @@ public final class RealtimeData {
 
 	@Override
 	public String toString() {
-		return "force_x=" + this.force_x + ", force_y=" + this.force_y + ", force_z=" + this.force_z + ", time="
-				+ this.time + ", torque_x=" + this.torque_x + ", torque_y=" + this.torque_y + ", torque_z="
-				+ this.torque_z;
+		return "force_x=" + this.force_x + ", force_y=" + this.force_y + ", force_z=" + this.force_z + ", torque_x="
+				+ this.torque_x + ", torque_y=" + this.torque_y + ", torque_z=" + this.torque_z + ", time=" + this.time
+				+ ", type=wifi";
 	}
 }
