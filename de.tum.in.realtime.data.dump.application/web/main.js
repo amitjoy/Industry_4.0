@@ -11,6 +11,7 @@
 			templateUrl : '/de.tum.in.realtime.data.dump/main/htm/bluetooth.htm'
 		});
 		$routeProvider.when('/wifi', {
+			controller : mainProvider,
 			templateUrl : '/de.tum.in.realtime.data.dump/main/htm/wifi.htm'
 		});
 		$routeProvider.otherwise('/');
@@ -30,23 +31,32 @@
 	{
 		var THIS = this;
 		
-		THIS.resources = [];
+		THIS.bluetoothResources = [];
+		THIS.wifiResources = [];
+		THIS.name = "";
+		THIS.type1 = "bluetooth";
+		THIS.type2 = "wifi";
 		
 		var interceptor = {
 			responseError : error
 		};
 		
-		var backends = $resource("/rest/data", {}, {
+		var backends = $resource("/rest/data/:type", {}, {
 			list : {
 				method : 'GET',
 				interceptor : interceptor,
 				isArray : true
 			}
-		});
-		
+		});		
 		
 		THIS.refresh = function() {
-			THIS.resources = backends.list({});
+			THIS.bluetoothResources = backends.list({type: THIS.type1});
+			THIS.wifiResources = backends.list({type: THIS.type2});
+			THIS.name = "";
+		}
+		
+		THIS.read = function(meta) {
+			THIS.name = meta.name;
 		}
 		
 	}

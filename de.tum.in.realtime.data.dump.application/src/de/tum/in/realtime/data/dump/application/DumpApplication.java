@@ -15,6 +15,7 @@
  *******************************************************************************/
 package de.tum.in.realtime.data.dump.application;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
@@ -53,17 +54,27 @@ public final class DumpApplication implements REST {
 	/**
 	 * REST Service to retrieve the saved real time industrial data
 	 */
-	public RealtimeData[] getData(final RESTRequest request) {
-		final RealtimeData data1 = new RealtimeData();
-		data1.name = "HELLO";
-		final RealtimeData data2 = new RealtimeData();
-		data2.name = "HELLO";
+	public Collection<? extends RealtimeData> getData(final RESTRequest request, final String type) {
 		final List<RealtimeData> datas = Lists.newArrayList();
-		final RealtimeData[] iotData = new RealtimeData[] { data1, data2 };
-		datas.add(data1);
-		datas.add(data2);
-		System.out.println("INSIDE");
-		return iotData;
+
+		if ("bluetooth".equals(type)) {
+			final RealtimeData data1 = new RealtimeData();
+			data1.name = "HELLO1";
+			final RealtimeData data2 = new RealtimeData();
+			data2.name = "HELLO2";
+			datas.add(data1);
+			datas.add(data2);
+		}
+
+		if ("wifi".equals(type)) {
+			final RealtimeData data1 = new RealtimeData();
+			data1.name = "HELLO3";
+			final RealtimeData data2 = new RealtimeData();
+			data2.name = "HELLO4";
+			datas.add(data1);
+			datas.add(data2);
+		}
+		return datas;
 	}
 
 	public String getLower(final RESTRequest request, final String string) {

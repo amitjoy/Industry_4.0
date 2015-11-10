@@ -9,11 +9,13 @@
 
 			<tbody>
 				<tr>
-					<td><label for="bm.resources" class="control-label">Realtime Data</label>
+					<td><label for="bm.resources" class="control-label">Realtime Wi-Fi Data</label>
 					</td>
 					<td>
-						<table class="table" ng-show=bm.resources.length>
-							<tr ng-repeat="r in bm.resources">
+						<table class="table" ng-show=bm.wifiResources.length>
+							<tr ng-repeat="r in bm.wifiResources | orderBy: 'name'"
+								ng-class="{active:bm.name==r.name}">
+								<td ng-click=bm.read(r)>{{r.name}}</td>
 							</tr>
 						</table>
 					</td>
