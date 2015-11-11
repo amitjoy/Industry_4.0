@@ -1,0 +1,12 @@
+#
+# CONTROLLER APPLICATION DEBUG RUN SPECIFICATION
+#
+
+-include: ~de.tum.in.led.controller.bndrun
+
+-runrequires.debug:  ${debug-bundles}
+
+-runtrace: true
+
+-runbundles: \
+	${error;Resolve first}
