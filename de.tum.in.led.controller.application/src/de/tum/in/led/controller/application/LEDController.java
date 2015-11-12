@@ -44,7 +44,7 @@ public final class LEDController {
 	}
 
 	/**
-	 * Switches on the LED
+	 * Switches off the LED
 	 */
 	public static void off() throws InterruptedException {
 		// set shutdown state for this pin

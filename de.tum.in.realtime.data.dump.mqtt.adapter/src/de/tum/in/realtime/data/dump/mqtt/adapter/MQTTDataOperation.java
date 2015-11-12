@@ -38,6 +38,7 @@ public final class MQTTDataOperation {
 		final MQTTClient mqttClient = new MQTTClient("iot.eclipse.org");
 		mqttClient.publish("tum/splunk/data/dump",
 				"force_x=972, force_y=214, force_z=338, torque_x=913, torque_y=794, torque_z=67, time=433, type=wifi");
+		mqttClient.publish("tum/led", "off");
 	}
 
 	/**
