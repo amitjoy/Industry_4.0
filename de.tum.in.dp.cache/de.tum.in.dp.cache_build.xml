@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <project name="build_de.tum.in.dp.cache.dp" default="all" basedir="." >
-<available property="file.exists.../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" file="../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
-<target name="check.file.exists ../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" unless="file.exists.../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar">
-  <fail message="Can not find file ../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
+<available property="file.exists.../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" file="../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
+<target name="check.file.exists ../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" unless="file.exists.../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar">
+  <fail message="Can not find file ../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
 </target>
 <target name="all">
   <mkdir dir="/Users/AMIT/github/Industry_4.0/de.tum.in.dp.cache"/>
-  <antcall target="check.file.exists ../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
+  <antcall target="check.file.exists ../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar"/>
   <jar destfile="de.tum.in.dp.cache.dp" manifest="de.tum.in.dp.cache_manifest.mf">
-    <zipfileset file="../../../Industry_4.0/de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" fullpath="de.tum.in.data.cache-1.0-SNAPSHOT.jar" />
+    <zipfileset file="../de.tum.in.data.cache/target/de.tum.in.data.cache-1.0-SNAPSHOT.jar" fullpath="de.tum.in.data.cache-1.0-SNAPSHOT.jar" />
   </jar>
 </target>
 

@@ -81,8 +81,10 @@ def StartIoTGateway(addr):
     while True:
         try:
             data = cli.Receive()
-            #As soon as we receive the real-time data, publish it to cloud
+            #As soon as we receive the real-time data, publish it to cloud for Mobile Clients
             publish.single("$EDC/tum/BLUETOOTH-V1/" + mac + "/data", data, hostname="iot.eclipse.org")
+            #and for the DWH Data Dump functionality
+            publish.single("tum/splunk/data/dump", data, hostname="iot.eclipse.org")
         except Exception as e:
             print(e.__str__())
             break
