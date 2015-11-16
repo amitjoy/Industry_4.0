@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1445016246658
-Build-Jdk: 1.8.0_60
+Bnd-LastModified: 1447700956924
+Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-Description: This bundle is used to trigger python program to com
  municate with the bluetooth milling machine. The primary focus is to co

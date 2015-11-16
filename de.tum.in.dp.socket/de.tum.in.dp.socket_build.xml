@@ -1,30 +1,14 @@
 <?xml version="1.0" ?>
-<!--
-    Copyright 2015 Amit Kumar Mondal <admin@amitinside.com>
-   
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-   
-        http://www.apache.org/licenses/LICENSE-2.0
-   
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
- -->
-
 <project name="build_de.tum.in.dp.socket.dp" default="all" basedir="." >
-<available property="file.exists.../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" file="../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
-<target name="check.file.exists ../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" unless="file.exists.../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar">
-  <fail message="Can not find file ../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
+<available property="file.exists.../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" file="../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
+<target name="check.file.exists ../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" unless="file.exists.../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar">
+  <fail message="Can not find file ../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
 </target>
 <target name="all">
-  <mkdir dir="/Users/AMIT/Industry_4.0/de.tum.in.dp.socket"/>
-  <antcall target="check.file.exists ../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
+  <mkdir dir="/Users/AMIT/github/Industry_4.0/de.tum.in.dp.socket"/>
+  <antcall target="check.file.exists ../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar"/>
   <jar destfile="de.tum.in.dp.socket.dp" manifest="de.tum.in.dp.socket_manifest.mf">
-    <zipfileset file="../de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" fullpath="de.tum.in.socket.client-1.0-SNAPSHOT.jar" />
+    <zipfileset file="../../../Industry_4.0/de.tum.in.socket.client/target/de.tum.in.socket.client-1.0-SNAPSHOT.jar" fullpath="de.tum.in.socket.client-1.0-SNAPSHOT.jar" />
   </jar>
 </target>
 

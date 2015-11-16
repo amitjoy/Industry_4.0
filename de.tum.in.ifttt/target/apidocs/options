@@ -1,10 +1,10 @@
 -classpath
-'/Users/AMIT/Industry_4.0/de.tum.in.ifttt/target/classes:/Users/AMIT/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar:/Users/AMIT/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.9.6/org.apache.felix.scr.annotations-1.9.6.jar:/Users/AMIT/.m2/repository/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar:/Users/AMIT/.m2/repository/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar:/Users/AMIT/.m2/repository/org/eclipse/kura/org.eclipse.kura.api/1.0.5-SNAPSHOT/org.eclipse.kura.api-1.0.5-SNAPSHOT.jar:/Users/AMIT/.m2/repository/org/apache/commons/commons-email/1.2/commons-email-1.2.jar:/Users/AMIT/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/AMIT/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/AMIT/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar'
+'/Users/AMIT/github/Industry_4.0/de.tum.in.ifttt/target/classes:/Users/AMIT/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar:/Users/AMIT/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.9.6/org.apache.felix.scr.annotations-1.9.6.jar:/Users/AMIT/.m2/repository/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar:/Users/AMIT/.m2/repository/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar:/Users/AMIT/.m2/repository/org/eclipse/kura/org.eclipse.kura.api/1.0.5-SNAPSHOT/org.eclipse.kura.api-1.0.5-SNAPSHOT.jar:/Users/AMIT/.m2/repository/org/apache/commons/commons-email/1.2/commons-email-1.2.jar:/Users/AMIT/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/AMIT/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/AMIT/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'/Users/AMIT/Industry_4.0/de.tum.in.ifttt/src/main/java'
+'/Users/AMIT/github/Industry_4.0/de.tum.in.ifttt/src/main/java'
 -Xdoclint:none
 -author
 -bottom
@@ -12,13 +12,13 @@
 -charset
 'UTF-8'
 -d
-'/Users/AMIT/Industry_4.0/de.tum.in.ifttt/target/apidocs'
+'/Users/AMIT/github/Industry_4.0/de.tum.in.ifttt/target/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
 'IFTTT Email IF 1.0-SNAPSHOT API'
 -linkoffline
-'http://docs.oracle.com/javase/7/docs/api' '/Users/AMIT/Industry_4.0/de.tum.in.ifttt/target/javadoc-bundle-options'
+'http://docs.oracle.com/javase/7/docs/api' '/Users/AMIT/github/Industry_4.0/de.tum.in.ifttt/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle

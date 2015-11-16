@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1445016239670
-Build-Jdk: 1.8.0_60
+Bnd-LastModified: 1447700949900
+Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-Description: This bundle is responsible for writing to a node of 
  OPC-UA Server (Example Write Node)

@@ -27,7 +27,7 @@ b="_build.xml"
 c="/"
 
 # The root directory of all the aforementioned projects.
-home_dir="/Users/AMIT/Industry_4.0/"
+home_dir="/Users/AMIT/github/Industry_4.0/"
 
 # The DP file extension
 ext=".dp"

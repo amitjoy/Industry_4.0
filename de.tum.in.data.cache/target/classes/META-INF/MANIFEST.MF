@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1445016214355
-Build-Jdk: 1.8.0_60
+Bnd-LastModified: 1447700931196
+Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-ClassPath: .,mongo-java-driver-3.0.1.jar
 Bundle-Description: This bundle is responsible for providing the opportu

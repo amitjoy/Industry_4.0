@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1445016206867
-Build-Jdk: 1.8.0_60
+Bnd-LastModified: 1447700926641
+Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-Description: This bundle is used to consume all the bluetooth ena
  bled milling machines. The primary focus is to control all the milling 
