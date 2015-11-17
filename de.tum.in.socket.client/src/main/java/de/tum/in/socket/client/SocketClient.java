@@ -44,6 +44,7 @@ import org.eclipse.kura.cloud.CloudletTopic;
 import org.eclipse.kura.configuration.ComponentConfiguration;
 import org.eclipse.kura.configuration.ConfigurableComponent;
 import org.eclipse.kura.configuration.ConfigurationService;
+import org.eclipse.kura.data.DataService;
 import org.eclipse.kura.message.KuraPayload;
 import org.eclipse.kura.message.KuraRequestPayload;
 import org.eclipse.kura.message.KuraResponsePayload;
@@ -113,6 +114,12 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 	 */
 	@Reference(bind = "bindConfigurationService", unbind = "unbindConfigurationService")
 	private volatile ConfigurationService m_configurationService;
+
+	/**
+	 * Eclipse Kura Data Service Dependency
+	 */
+	@Reference(bind = "bindDataService", unbind = "unbindDataService")
+	private volatile DataService m_dataService;
 
 	/**
 	 * OSGi Event Admin Service Dependency
@@ -197,6 +204,15 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 	public synchronized void bindConfigurationService(final ConfigurationService configurationService) {
 		if (this.m_configurationService == null) {
 			this.m_configurationService = configurationService;
+		}
+	}
+
+	/**
+	 * Callback to be used while {@link DataService} is registering
+	 */
+	public synchronized void bindDataService(final DataService dataService) {
+		if (this.m_dataService == null) {
+			this.m_dataService = dataService;
 		}
 	}
 
@@ -355,7 +371,7 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 		// Publish for Splunk DWH
 		LOGGER.debug("Publishing WiFi Data.....to Splunk");
 		this.m_systemService.getProperties().getProperty(WIFI_REALTIME_TOPIC);
-		this.getCloudApplicationClient().publish("tum/splunk/data/dump", message.getBytes(), DFLT_PUB_QOS, DFLT_RETAIN,
+		this.m_dataService.publish("tum/splunk/data/dump", message.getBytes(), DFLT_PUB_QOS, DFLT_RETAIN,
 				DFLT_PRIORITY);
 		respPayload.setResponseCode(KuraResponsePayload.RESPONSE_CODE_OK);
 	}
@@ -411,6 +427,15 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 	public synchronized void unbindConfigurationService(final ConfigurationService configurationService) {
 		if (this.m_configurationService == configurationService) {
 			this.m_configurationService = null;
+		}
+	}
+
+	/**
+	 * Callback to be used while {@link DataService} is deregistering
+	 */
+	public synchronized void unbindDataService(final DataService dataService) {
+		if (this.m_dataService == dataService) {
+			this.m_dataService = null;
 		}
 	}
 
