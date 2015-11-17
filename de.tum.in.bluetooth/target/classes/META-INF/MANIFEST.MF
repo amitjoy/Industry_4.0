@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1447762627889
+Bnd-LastModified: 1447769755727
 Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-Activator: de.tum.in.bluetooth.Activator

@@ -82,9 +82,9 @@ def StartIoTGateway(addr):
         try:
             data = cli.Receive()
             #As soon as we receive the real-time data, publish it to cloud for Mobile Clients
-            publish.single("$EDC/tum/BLUETOOTH-V1/" + mac + "/data", data, hostname="iot.eclipse.org")
+            publish.single("$EDC/tum/BLUETOOTH-V1/" + mac + "/data", data, hostname="m20.cloudmqtt.com", port="11143", auth = {'username':"user@email.com", 'password':"iotiwbiot"})
             #and for the DWH Data Dump functionality
-            publish.single("tum/splunk/data/dump", data, hostname="iot.eclipse.org")
+            publish.single("$EDC/tum/splunk/data/dump", data, hostname="m20.cloudmqtt.com", port="11143", auth = {'username':"user@email.com", 'password':"iotiwbiot"})
         except Exception as e:
             print(e.__str__())
             break
