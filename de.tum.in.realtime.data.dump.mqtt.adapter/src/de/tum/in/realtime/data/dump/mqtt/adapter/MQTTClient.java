@@ -34,7 +34,7 @@ import org.fusesource.mqtt.client.Topic;
 
 /**
  * MQTT client.
- * 
+ *
  * @author AMIT KUMAR MONDAL
  */
 public class MQTTClient {
@@ -48,26 +48,23 @@ public class MQTTClient {
 	 * Creates a simple MQTT client and connects it to the specified MQTT broker
 	 *
 	 * @param host
-	 *            the hostname of the broker we are trying to connect to
+	 *            MQTT Broker Server Address
+	 * @param port
+	 *            MQTT Broker Port
+	 * @param username
+	 *            MQTT Broker Username
+	 * @param password
+	 *            MQTT Broker Password
 	 */
-	public MQTTClient(final String host) {
-		this(host, null);
-	}
-
-	/**
-	 * Creates a simple MQTT client and connects it to the specified MQTT broker
-	 *
-	 * @param host
-	 *            the hostname of the broker
-	 * @param clientId
-	 *            the UNIQUE id of this client
-	 */
-	public MQTTClient(final String host, final String clientId) {
+	public MQTTClient(final String host, final String port, final String username, final String password,
+			final String clientId) {
 		// Create fusesource MQTT client
 		final MQTT mqtt = new MQTT();
 		try {
-			mqtt.setHost(this.hostToURI(host));
+			mqtt.setHost(this.hostToURI(host, port));
 			mqtt.setClientId(clientId);
+			mqtt.setUserName(username);
+			mqtt.setPassword(password);
 		} catch (final URISyntaxException e) {
 			System.out.println("Are you sure you specified host correctly? Terminating...");
 		}
@@ -154,8 +151,8 @@ public class MQTTClient {
 		return this.channels.keySet();
 	}
 
-	private String hostToURI(final String host) {
-		return "tcp://" + host + ":1883";
+	private String hostToURI(final String host, final String port) {
+		return "tcp://" + host + ":" + port;
 	}
 
 	/**

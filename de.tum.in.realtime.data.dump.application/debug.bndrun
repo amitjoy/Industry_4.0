@@ -53,3 +53,8 @@
 	com.google.guava,\
 	org.jooq.jool,\
 	org.mongodb.mongo-java-driver
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.fusesource.hawtbuf.hawtbuf)',\
+	osgi.identity;filter:='(osgi.identity=org.fusesource.hawtdispatch.hawtdispatch)',\
+	osgi.identity;filter:='(osgi.identity=org.fusesource.hawtdispatch.hawtdispatch-transport)',\
+	osgi.identity;filter:='(osgi.identity=org.fusesource.mqtt-client.mqtt-client)'

@@ -1,7 +1,6 @@
 package de.tum.in.realtime.data.dump.mqtt.adapter;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,26 +19,34 @@ import de.tum.in.realtime.data.operation.model.RealtimeData;
 public final class MQTTDataOperation {
 
 	/**
+	 * MQTT Client ID
+	 */
+	private static final String CLIENT_ID = "DWH-Industry";
+
+	/**
 	 * Data Subscription Channel
 	 */
-	private static final String DATA_DUMP_CHANNEL = "tum/splunk/data/dump";
+	private static final String DATA_DUMP_CHANNEL = "$EDC/tum/splunk/data/dump";
+
+	/**
+	 * MQTT Server Password
+	 */
+	private static final String MQTT_PASSWORD = "iotiwbiot";
+
+	/**
+	 * MQTT Server Port
+	 */
+	private static final String MQTT_PORT = "11143";
 
 	/**
 	 * MQTT Server
 	 */
-	private static final String MQTT_SERVER = "iot.eclipse.org";
+	private static final String MQTT_SERVER = "m20.cloudmqtt.com";
 
 	/**
-	 * TEST Function TODO Remove it
-	 *
-	 * @param args
+	 * MQTT Server Username
 	 */
-	public static void main(final String[] args) {
-		final MQTTClient mqttClient = new MQTTClient("iot.eclipse.org");
-		mqttClient.publish("tum/splunk/data/dump",
-				"force_x=972, force_y=214, force_z=338, torque_x=913, torque_y=794, torque_z=67, time=433, type=wifi");
-		mqttClient.publish("tum/led", "off");
-	}
+	private static final String MQTT_USERNAME = "user@email.com";
 
 	/**
 	 * Data Dump Operation
@@ -57,10 +64,10 @@ public final class MQTTDataOperation {
 	 */
 	@Activate
 	public void activate() {
-		this.mqttClient = new MQTTClient(MQTT_SERVER);
+		this.mqttClient = new MQTTClient(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD, CLIENT_ID);
 		this.mqttClient.subscribe(DATA_DUMP_CHANNEL, message -> {
-			final List<String> list = Arrays.stream(message.split(", ")).map(msg -> Arrays.asList(msg.split("=")))
-					.flatMap(Collection::stream).collect(Collectors.toList());
+			final List<String> list = Arrays.stream(message.split(",")).map(msg -> Arrays.asList(msg.split("=")))
+					.flatMap(lst -> lst.stream().map(a -> a.replaceAll("\0", ""))).collect(Collectors.toList());
 
 			this.dataOperation.save(this.wrap(list));
 		});
@@ -71,7 +78,6 @@ public final class MQTTDataOperation {
 	 */
 	@Deactivate
 	public void deactivate() {
-		this.mqttClient = null;
 		this.mqttClient.unsubscribe(DATA_DUMP_CHANNEL);
 	}
 

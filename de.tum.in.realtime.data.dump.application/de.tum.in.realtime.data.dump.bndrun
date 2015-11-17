@@ -14,7 +14,10 @@ JPM-Command:					dump
 
 -runbundles: \
 	biz.aQute.bndlib;version='[3.0.0,3.0.1)',\
+	com.google.guava;version='[19.0.0,19.0.1)',\
 	de.tum.in.realtime.data.dump.application;version=snapshot,\
+	de.tum.in.realtime.data.operation.api;version=snapshot,\
+	de.tum.in.realtime.data.operation.provider;version=snapshot,\
 	org.apache.felix.configadmin;version='[1.8.6,1.8.7)',\
 	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
 	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
@@ -26,6 +29,7 @@ JPM-Command:					dump
 	org.eclipse.equinox.event;version='[1.3.100,1.3.101)',\
 	org.eclipse.equinox.metatype;version='[1.4.100,1.4.101)',\
 	org.knopflerfish.bundle.useradmin;version='[4.1.1,4.1.2)',\
+	org.mongodb.mongo-java-driver;version='[3.0.4,3.0.5)',\
 	org.osgi.service.event;version='[1.3.1,1.3.2)',\
 	org.osgi.service.metatype;version='[1.3.0,1.3.1)',\
 	osgi.enroute.configurer.simple.provider;version='[1.2.2,1.2.3)',\
@@ -37,14 +41,4 @@ JPM-Command:					dump
 	osgi.enroute.logger.simple.provider;version='[1.2.1,1.2.2)',\
 	osgi.enroute.rest.simple.provider;version='[2.0.2,2.0.3)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
-	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)',\
-	de.tum.in.realtime.data.dump.mqtt.adapter;version=latest,\
-	de.tum.in.realtime.data.operation.api;version=latest,\
-	de.tum.in.realtime.data.operation.provider;version=latest,\
-	org.fusesource.hawtbuf.hawtbuf,\
-	org.fusesource.hawtdispatch.hawtdispatch,\
-	org.fusesource.hawtdispatch.hawtdispatch-transport,\
-	org.fusesource.mqtt-client.mqtt-client,\
-	com.google.guava,\
-	org.jooq.jool,\
-	org.mongodb.mongo-java-driver
+	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)'
