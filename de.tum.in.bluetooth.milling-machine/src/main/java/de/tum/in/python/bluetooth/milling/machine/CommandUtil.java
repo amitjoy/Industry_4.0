@@ -50,6 +50,16 @@ import com.google.common.base.Throwables;
 public final class CommandUtil {
 
 	/**
+	 * Bluetooth Interface
+	 */
+	private static final String BD_IFACE = "hci0";
+
+	/**
+	 * Represents the hciconfig POSIX command utility
+	 */
+	private static final String CMD_HCI = "hciconfig";
+
+	/**
 	 * Represents the python POSIX command utility
 	 */
 	private static final String CMD_PYTHON = "python";
@@ -70,11 +80,20 @@ public final class CommandUtil {
 	private static final String PROGRAM_LOCATION = "/home/pi/TUM/bt.py";
 
 	/**
+	 * Bluetooth Reset Argument
+	 */
+	private static final String RESET_ARG = "reset";
+
+	/**
 	 * Starts the communication with the provided bluetooth mac address of
 	 * milling machine
 	 */
 	public static void initCommunication(final String macAddress) {
 		LOGGER.info("Starting Python Bluetooth Milling Machine Communication...");
+
+		// Before each and every bluetooth communication, reset the bluetooth
+		// interface
+		resetBluetoothInterface();
 
 		SafeProcess process = null;
 		BufferedReader br = null;
@@ -93,6 +112,42 @@ public final class CommandUtil {
 			}
 
 			LOGGER.info("Starting Python Bluetooth Milling Machine Communication...Done");
+		} catch (final Exception e) {
+			LOGGER.error(Throwables.getStackTraceAsString(e));
+		} finally {
+			try {
+				LOGGER.debug("Closing Buffered Reader and destroying Process: " + process);
+				br.close();
+				process.destroy();
+			} catch (final IOException e) {
+				LOGGER.error("Error closing read buffer: " + Throwables.getStackTraceAsString(e));
+			}
+		}
+	}
+
+	/**
+	 * Reset Bluetooth Interface
+	 */
+	public static void resetBluetoothInterface() {
+		LOGGER.info("Bluetooth Interface is getting reset...");
+
+		SafeProcess process = null;
+		BufferedReader br = null;
+		final String[] command = { CMD_HCI, BD_IFACE, RESET_ARG };
+
+		try {
+			process = ProcessUtil.exec(command);
+			br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			String line = null;
+
+			while ((line = br.readLine()) != null) {
+				if (line.contains("command not found")) {
+					LOGGER.error("Resetting Command Not Found");
+					throw new KuraException(KuraErrorCode.OPERATION_NOT_SUPPORTED);
+				}
+			}
+
+			LOGGER.info("Bluetooth Interface is getting reset...Done");
 		} catch (final Exception e) {
 			LOGGER.error(Throwables.getStackTraceAsString(e));
 		} finally {
