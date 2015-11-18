@@ -30,9 +30,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import de.tum.in.client.IKuraMQTTClient;
+import de.tum.in.client.KuraMQTTClient;
+import de.tum.in.client.message.KuraPayload;
 
 /**
  * Socket Server Instance
@@ -43,7 +48,9 @@ import java.util.concurrent.TimeUnit;
 public final class SocketServer {
 
 	private static String channelType = "channelType";
+	private static IKuraMQTTClient client;
 	private static String clientChannel = "clientChannel";
+
 	private static SocketChannel clientSocketChannel;
 
 	/**
@@ -62,6 +69,19 @@ public final class SocketServer {
 		final String ipAddress = args[0];
 
 		data = ReadExcel.read();
+		client = new KuraMQTTClient.Builder().setHost("m20.cloudmqtt.com").setPort("11143")
+				.setUsername("user@email.com").setPassword("iotiwbiot").setClientId("WIFI-SERVER").build();
+
+		// Connect to the Message Broker
+		final boolean status = client.connect();
+		System.out.println("MQTT Communication Agent->" + client);
+		System.out.println("MQTT Communication Agent Status->" + status);
+		if (status && Objects.nonNull(data)) {
+			final KuraPayload payload = new KuraPayload();
+			payload.addMetric("request.id", "26452154872");
+			payload.addMetric("requester.client.id", "WIFI-SERVER");
+			client.publish("$EDC/tum/B8:27:EB:A6:A9:8A/SOCKET-V1/EXEC/start", payload);
+		}
 
 		final ServerSocketChannel channel = ServerSocketChannel.open();
 

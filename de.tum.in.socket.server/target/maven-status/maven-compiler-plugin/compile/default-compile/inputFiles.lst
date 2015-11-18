@@ -1,3 +1,14 @@
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/example/Snippets.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/IKuraMQTTClient.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/util/GZipUtil.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/operator/KuraPayloadEncoder.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/adapter/MessageListener.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/operator/KuraPayloadDecoder.java
 /Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/socket/server/RealtimeData.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/message/KuraPosition.java
 /Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/socket/server/SocketServer.java
 /Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/socket/server/ReadExcel.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/example/MQTTClient.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/KuraMQTTClient.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/message/protobuf/KuraPayloadProto.java
+/Users/AMIT/github/Industry_4.0/de.tum.in.socket.server/src/main/java/de/tum/in/client/message/KuraPayload.java
