@@ -16,6 +16,7 @@
 package de.tum.in.socket.client;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static java.util.Objects.isNull;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -96,6 +97,11 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 	 * Property for WiFi Real-time Topic Namespace
 	 */
 	private static final String WIFI_REALTIME_TOPIC = "wifi.realtime.topic";
+
+	/**
+	 * Socket Connection Channel
+	 */
+	private SocketChannel channel;
 
 	/**
 	 * Activity Log Service Dependency
@@ -327,19 +333,21 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 
 		String message = null;
 		try {
-			final SocketChannel channel = SocketChannel.open();
+			if (isNull(this.channel)) {
+				this.channel = SocketChannel.open();
+			}
 
 			// we open this channel in non blocking mode
-			channel.configureBlocking(false);
-			channel.connect(new InetSocketAddress(this.m_socketIPAddress, this.m_socketPort));
+			this.channel.configureBlocking(false);
+			this.channel.connect(new InetSocketAddress(this.m_socketIPAddress, this.m_socketPort));
 
-			while (!channel.finishConnect()) {
+			while (!this.channel.finishConnect()) {
 				// No need to log. Still connecting to server.
 			}
 			while (!Thread.currentThread().isInterrupted()) {
 				final ByteBuffer bufferA = ByteBuffer.allocate(500);
 				message = "";
-				while ((channel.read(bufferA)) > 0) {
+				while ((this.channel.read(bufferA)) > 0) {
 					bufferA.flip();
 					message += Charset.defaultCharset().decode(bufferA);
 				}

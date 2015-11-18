@@ -15,6 +15,8 @@
  *******************************************************************************/
 package de.tum.in.socket.server;
 
+import static java.util.Objects.isNull;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -42,6 +44,8 @@ public final class SocketServer {
 
 	private static String channelType = "channelType";
 	private static String clientChannel = "clientChannel";
+	private static SocketChannel clientSocketChannel;
+
 	/**
 	 * List of data to send
 	 */
@@ -82,7 +86,9 @@ public final class SocketServer {
 				final SelectionKey key = iterator.next();
 				if (((Map<?, ?>) key.attachment()).get(channelType).equals(serverChannel)) {
 					final ServerSocketChannel serverSocketChannel = (ServerSocketChannel) key.channel();
-					final SocketChannel clientSocketChannel = serverSocketChannel.accept();
+					if (isNull(clientSocketChannel)) {
+						clientSocketChannel = serverSocketChannel.accept();
+					}
 
 					if (clientSocketChannel != null) {
 						clientSocketChannel.configureBlocking(false);

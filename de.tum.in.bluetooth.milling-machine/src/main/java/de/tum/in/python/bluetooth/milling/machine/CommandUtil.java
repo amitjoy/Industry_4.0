@@ -119,6 +119,7 @@ public final class CommandUtil {
 				LOGGER.debug("Closing Buffered Reader and destroying Process: " + process);
 				br.close();
 				process.destroy();
+				resetBluetoothInterface();
 			} catch (final IOException e) {
 				LOGGER.error("Error closing read buffer: " + Throwables.getStackTraceAsString(e));
 			}
