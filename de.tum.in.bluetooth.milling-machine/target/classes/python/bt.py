@@ -22,6 +22,7 @@ import bluetooth
 from subprocess import Popen, PIPE
 import sys
 import time
+from subprocess import call
 import paho.mqtt.publish as publish
 from random import randint
 
@@ -94,6 +95,8 @@ def StartMillingMachine(addr):
     srv = BT()
     mac = addr
     srv.BindListen(mac)
+    print('Resetting Bluetooth Interface')
+    call(["hciconfig", "hci0", "reset"])
     print('Listening for connections on: {0}'.format(mac))
     while True:
         client, clientInfo = srv.Accept()

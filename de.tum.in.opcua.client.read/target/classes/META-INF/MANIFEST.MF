@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1447812405490
+Bnd-LastModified: 1447816685350
 Build-Jdk: 1.8.0_65
 Built-By: AMIT
 Bundle-Description: This bundle is responsible for reading OPC-UA Server
