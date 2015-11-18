@@ -338,7 +338,7 @@ public class SocketClient extends Cloudlet implements ConfigurableComponent {
 			}
 
 			// we open this channel in non blocking mode
-			if (!isNull(this.channel) && !this.channel.isConnectionPending()) {
+			if (!isNull(this.channel) && this.channel.isOpen() && !this.channel.isConnected()) {
 				this.channel.configureBlocking(false);
 				this.channel.connect(new InetSocketAddress(this.m_socketIPAddress, this.m_socketPort));
 			}
