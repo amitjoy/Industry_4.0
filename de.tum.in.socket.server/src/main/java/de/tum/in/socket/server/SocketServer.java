@@ -69,8 +69,8 @@ public final class SocketServer {
 		final String ipAddress = args[0];
 
 		data = ReadExcel.read();
-		client = new KuraMQTTClient.Builder().setHost("m20.cloudmqtt.com").setPort("11143")
-				.setUsername("user@email.com").setPassword("iotiwbiot").setClientId("WIFI-SERVER").build();
+		client = new KuraMQTTClient.Builder().setHost("iot.eclipse.org").setPort("1883").setClientId("WIFI-IDP-SERVER")
+				.build();
 
 		// Connect to the Message Broker
 		final boolean status = client.connect();
