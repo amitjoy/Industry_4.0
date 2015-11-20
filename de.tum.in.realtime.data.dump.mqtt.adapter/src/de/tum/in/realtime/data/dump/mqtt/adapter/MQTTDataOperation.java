@@ -36,12 +36,12 @@ public final class MQTTDataOperation {
 	/**
 	 * MQTT Server Port
 	 */
-	private static final String MQTT_PORT = "11143";
+	private static final String MQTT_PORT = "1883";
 
 	/**
 	 * MQTT Server
 	 */
-	private static final String MQTT_SERVER = "m20.cloudmqtt.com";
+	private static final String MQTT_SERVER = "iot.eclipse.org";
 
 	/**
 	 * MQTT Server Username
@@ -64,7 +64,7 @@ public final class MQTTDataOperation {
 	 */
 	@Activate
 	public void activate() {
-		this.mqttClient = new MQTTClient(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD, CLIENT_ID);
+		this.mqttClient = new MQTTClient(MQTT_SERVER, MQTT_PORT, null, null, CLIENT_ID);
 		this.mqttClient.subscribe(DATA_DUMP_CHANNEL, message -> {
 			final List<String> list = Arrays.stream(message.split(",")).map(msg -> Arrays.asList(msg.split("=")))
 					.flatMap(lst -> lst.stream().map(a -> a.replaceAll("\0", ""))).collect(Collectors.toList());
