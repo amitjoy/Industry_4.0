@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1447938569205
-Build-Jdk: 1.8.0_65
+Bnd-LastModified: 1448996833491
+Build-Jdk: 1.8.0_66
 Built-By: AMIT
 Bundle-ClassPath: .,ua-client-1.0.3-SNAPSHOT.jar,ua-server-0.4.3-SNAPSHO
  T.jar,ctt-namespace-0.4.3-SNAPSHOT.jar,stack-core-1.0.2.jar,stack-clien

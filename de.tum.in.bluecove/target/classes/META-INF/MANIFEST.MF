@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1447938542623
-Build-Jdk: 1.8.0_65
+Bnd-LastModified: 1448996807356
+Build-Jdk: 1.8.0_66
 Built-By: AMIT
 Bundle-ClassPath: .,bluecove-2.1.0.jar
 Bundle-Developer: Amit Kumar Mondal
