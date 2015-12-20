@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="de.tum.in.opcua.client.write.node" activate="activate" deactivate="deactivate">
-    <implementation class="de.tum.in.client.write.node.OpcUaClientWriteNode"/>
-    <service servicefactory="false">
-        <provide interface="de.tum.in.opcua.client.OpcUaClientAction"/>
-    </service>
-    <property name="service.pid" value="de.tum.in.opcua.client.write.node"/>
-</scr:component>

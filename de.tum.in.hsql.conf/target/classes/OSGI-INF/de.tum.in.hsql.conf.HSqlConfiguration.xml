@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="de.tum.in.hsql.conf" activate="activate" deactivate="deactivate">
-    <implementation class="de.tum.in.hsql.conf.HSqlConfiguration"/>
-    <service servicefactory="false">
-        <provide interface="de.tum.in.hsql.conf.HSqlConfiguration"/>
-    </service>
-    <property name="service.pid" value="de.tum.in.hsql.conf"/>
-    <reference name="m_systemService" interface="org.eclipse.kura.system.SystemService" cardinality="1..1" policy="static" bind="bindSystemService" unbind="unbindSystemService"/>
-</scr:component>

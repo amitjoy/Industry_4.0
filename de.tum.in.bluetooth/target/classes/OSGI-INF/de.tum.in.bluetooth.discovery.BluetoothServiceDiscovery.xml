@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="de.tum.in.bluetooth.service.discovery" activate="activate" deactivate="stop">
-    <implementation class="de.tum.in.bluetooth.discovery.BluetoothServiceDiscovery"/>
-    <property name="service.pid" value="de.tum.in.bluetooth.service.discovery"/>
-    <reference name="m_fleet" interface="de.tum.in.bluetooth.devices.DeviceList" cardinality="0..1" policy="dynamic" bind="bindDeviceListService" unbind="unbindDeviceListService"/>
-    <reference name="m_remoteDevice" interface="javax.bluetooth.RemoteDevice" cardinality="0..1" policy="dynamic" bind="bindRemoteDevice" unbind="unbindRemoteDevice"/>
-</scr:component>

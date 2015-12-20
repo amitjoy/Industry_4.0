@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="de.tum.in.activity.log.publisher" activate="activate" deactivate="deactivate">
-    <implementation class="de.tum.in.activity.log.ActivityLogPublisher"/>
-    <property name="service.pid" value="de.tum.in.activity.log.publisher"/>
-    <reference name="m_cloudService" interface="org.eclipse.kura.cloud.CloudService" cardinality="1..1" policy="static" bind="bindCloudService" unbind="unbindCloudService"/>
-    <reference name="m_systemService" interface="org.eclipse.kura.system.SystemService" cardinality="1..1" policy="static" bind="bindSystemService" unbind="unbindSystemService"/>
-</scr:component>
