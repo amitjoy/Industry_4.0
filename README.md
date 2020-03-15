@@ -4,7 +4,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 
 ### What is this repository for? ###
 
-* This repository contains all the Industrial Automation Related Source Codes for the complete subsystem
+* This repository comprises all the Industrial Automation Related Source Codes for the complete subsystem
 * 1.0.0-SNAPSHOT
 
 ### How do I set up? ###
