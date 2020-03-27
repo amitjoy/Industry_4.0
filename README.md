@@ -18,7 +18,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 
 ### Contribution Guidelines ###
 
-* Before you commit your code to this project, please talk to the repo owner first
+* Before you commit any changes to this project, please talk to the repo owner first
 * Code review
 * Other guidelines
 
