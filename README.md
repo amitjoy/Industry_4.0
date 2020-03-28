@@ -16,7 +16,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 * Build the parent POM
 * Deploy the Deployment Packages to your **Eclipse Kura** Installation
 
-### Contribution Guidelines ###
+### Contribution Guideline ###
 
 * Before you commit any changes to this project, please talk to the repo owner first
 * Code review
