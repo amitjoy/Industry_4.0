@@ -9,7 +9,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 
 ### How to set up? ###
 
-* Install maven in your local machine
+* Install maven in your machine
 * Checkout the complete source
 * Change the location in all the Deployment Package Definitions manually
 * Change the location in Shell Script to get the final deployment
