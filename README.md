@@ -20,7 +20,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 
 * Before you commit any changes to this project, please contact the repo owner first
 * Code review
-* Other guidelines
+* Other project related guidelines
 
 ### Who do I talk to? ###
 
