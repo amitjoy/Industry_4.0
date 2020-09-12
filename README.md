@@ -7,7 +7,7 @@ This is the repository for the development of a complete end-to-end Industry 4.0
 * This repository comprises all the industrial automation related source codes for the complete subsystem
 * 1.0.0-SNAPSHOT 
 
-### How to set up? ###
+### How can I set up? ###
 
 * Install maven in your machine
 * Checkout the complete source
