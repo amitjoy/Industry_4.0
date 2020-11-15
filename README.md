@@ -4,7 +4,7 @@ This is the repository for the development of an end-to-end Industry 4.0 - Indus
 
 ### What is this repository for? ###
 
-* This repository contains all the industrial automation related source codes for the complete subsystem
+* This repository contains all the industrial automation related source codes for the complete Industry 4.0 subsystem
 * 1.0.0-SNAPSHOT 
 
 ### How can I set up? ###
