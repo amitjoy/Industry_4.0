@@ -9,7 +9,7 @@ This is the repository for the development of an end-to-end Industry 4.0 - Indus
 
 ### How can I set up? ###
 
-* Install maven in your machine
+* Install maven in your local machine
 * Checkout this complete repository 
 * Change the location in all the Deployment Package Definitions manually
 * Change the location in Shell Script to get the final deployment
