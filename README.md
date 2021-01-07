@@ -7,7 +7,7 @@ This is the repository for the development of an end-to-end Industry 4.0 - Indus
 * This repository comprises all the industrial automation related source codes for the complete Industry 4.0 solution
 * 1.0.0-SNAPSHOT 
 
-### How can I set up? ###
+### How can I set the environment up? ###
 
 * Install maven in your local machine
 * Checkout this complete repository 
