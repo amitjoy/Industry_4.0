@@ -19,7 +19,7 @@ This is the repository for the development of an end-to-end Industry 4.0 - Indus
 ### Contribution Guidelines ###
 
 * Before creating a PR, please contact the repo owner first
-* Code review
+* Code Review
 * Other project related guidelines
 
 ### Who do I talk to? ###
